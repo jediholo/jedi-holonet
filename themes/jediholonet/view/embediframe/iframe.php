@@ -1,0 +1,1 @@
+<iframe src="<?php echo $url ?>" frameborder="0" scrolling="no" width="<?php echo $width; ?>" height="<?php echo $height; ?>">Your browser does not support frames.</iframe>

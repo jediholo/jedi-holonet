@@ -1,0 +1,277 @@
+/*  
+Theme Name: JEDI Holonet
+Theme URI: http://www.jediholo.net
+Description: JEDI Holonet Theme
+Version: 1.6
+Author: Fabien Crespel (code) & Ctathos Ederoi (design)
+Author URI: http://www.jediholo.net
+*/
+
+
+@import url("//static.jediholo.net/css/style.css");
+
+
+
+/*********/
+/* Posts */
+/*********/
+
+.post {
+	overflow: hidden;
+}
+.post h4 {
+	margin-left: 15px;
+}
+
+.postmetadata {
+	clear: both;
+	font-size: 10px;
+	text-align: center;
+}
+
+.post-categories {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: -16px;
+	top: -4px;
+}
+.post-categories li {
+	margin-bottom: 5px;
+}
+
+.post-category {
+	display: block;
+	border: none !important;
+	width: 32px;
+	height: 32px;
+	overflow: hidden;
+	text-indent: -999px;
+}
+
+.post-category-entertainment-and-arts {
+	background-image: url("images/category_arts.png");
+}
+.post-category-business {
+	background-image: url("images/category_business.png");
+}
+.post-category-galactic {
+	background-image: url("images/category_galactic.png");
+}
+.post-category-jedi {
+	background-image: url("images/category_jedi.png");
+}
+.post-category-regional {
+	background-image: url("images/category_regional.png");
+}
+.post-category-sports {
+	background-image: url("images/category_sports.png");
+}
+
+
+
+/************/
+/* Comments */
+/************/
+
+.commentlist li, #commentform input, #commentform textarea {
+	font-size: 10px;
+}
+
+.commentlist li {
+	font-weight: bold;
+}
+
+.commentlist li .avatar {
+	float: right;
+	border: 1px solid #eee;
+	padding: 2px;
+	background: #fff;
+}
+
+.commentlist cite, .commentlist cite a {
+	font-weight: bold;
+	font-style: normal;
+}
+
+.commentlist p {
+	font-weight: normal;
+	text-transform: none;
+}
+
+#commentform input {
+	width: 170px;
+	padding: 2px;
+	margin: 5px 5px 1px 0;
+}
+
+#commentform textarea {
+	width: 100%;
+	padding: 2px;
+}
+
+#commentform #submit {
+	margin: 0;
+	float: right;
+}
+
+.commentmetadata {
+	font-weight: normal;
+}
+
+
+
+/************/
+/* Captions */
+/************/
+
+.wp-caption {
+	text-align: center;
+	max-width: 100%;
+}
+
+.wp-caption-text {
+	font-size: 9px;
+	padding: 0 4px 5px;
+	margin: 0;
+	text-align: center;
+}
+
+.content .wp-caption a {
+	border: 0;
+}
+
+
+
+/***********/
+/* Sidebar */
+/***********/
+
+.narrowcolumn {
+	margin-right: 260px;
+}
+
+.sidebar {
+	float: right;
+	font-size: 10px;
+	margin-left: 10px;
+	margin-top: -5px;
+	width: 250px;
+}
+
+.sidebar ul:first-child {
+	list-style-type: none;
+	margin-left: 0;
+}
+
+.sidebar dt {
+	display: inline;
+	font-weight: bold;
+}
+
+.sidebar dd {
+	display: inline;
+}
+
+.sidebar select {
+	font-size: 10px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+
+/*--------------------------*/
+/* Q3 Server Tracker Widget */
+/*--------------------------*/
+
+.widget_tracker {
+	position: relative;
+}
+.widget_tracker .refresh {
+	position: absolute;
+	top: 0;
+	right: 2px;
+	height: 16px;
+	padding: 2px 0 0 20px;
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+
+
+/*------------------------*/
+/* Google Events Calendar */
+/*------------------------*/
+
+.sidebar .gce-widget-list .gce-list {
+	list-style-type: circle;
+	margin-left: 15px;
+}
+
+.sidebar .gce-widget-list .gce-list .gce-list-event {
+	background-color: transparent;
+}
+.sidebar .gce-widget-list .gce-list ul {
+	list-style-type: square;
+	margin: 0 0 10px 15px;
+}
+
+
+
+/***************/
+/* Search form */
+/***************/
+
+#searchform {
+	padding-right: 65px;
+}
+
+#searchform #searchform-query {
+	float: left;
+	width: 100%;
+}
+
+#searchform #searchform-query #s {
+	width: 100%;
+}
+
+#searchform #searchform-submit {
+	float: right;
+	margin-right: -65px;
+}
+
+
+
+/******************/
+/* RPMod features */
+/******************/
+
+.ft_table {
+	font-weight: bold;
+}
+.ft_title {
+	text-align: right;
+}
+.ft_on {
+	color: #00BFFF;
+	text-align: center;
+}
+.ft_off {
+	color: #808080;
+	text-align: center;
+}
+.ft_disabled {
+	color: #CC5555;
+	text-align: center;
+}
+.ft_unavailable {
+	color: #BBBBBB;
+	text-align: center;
+}
+.ft_new {
+	color: #55CC55;
+	text-align: center;
+}
+.ft_points {
+	padding-left: 10px;
+}

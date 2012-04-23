@@ -1,0 +1,47 @@
+/**
+ * ::JEDI:: Web Site
+ * @file CSS 2 stylesheet (Showcase)
+ * @author Fabien Crespel (code)
+ * @author Ctathos Ederoi (design)
+ */
+ 
+@import url("//static.jediholo.net/css/common.css");
+
+
+body {
+	margin: 20px;
+	background-color: black;
+	color: white;
+}
+
+.showcase a {
+	color: #999999;
+	border-bottom: 1px dotted #999999;
+	text-decoration: none;
+}
+.showcase a:hover {
+	border-bottom: 1px solid #999999;
+	text-decoration: none;
+}
+
+.showcase-content {
+	width: 900px;
+	margin: 0 auto;
+}
+
+.showcase-content .box {
+	margin: 20px;
+	background-color: #444444;
+	background-image: url("//static.jediholo.net/img/content_bg.gif");
+	background-repeat: repeat;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+.showcase-content blockquote {
+	padding: 10px;
+	background-color: transparent;
+	background-image: url("//static.jediholo.net/img/box_bg.png");
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
