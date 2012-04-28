@@ -8,7 +8,41 @@ Author URI: http://www.jediholo.net
 */
 
 
-@import url("//static.jediholo.net/css/style.css");
+@import url("//static.jediholo.net/css/style-min.css");
+
+
+
+/****************************************/
+/* Contextual navigation (current site) */
+/****************************************/
+
+#navContainer .navList .navItem a {
+	background-image: url("images/sitenav.gif");
+}
+
+#navContainer .navList #navItem-holonews a { background-position: 0px 0px; }
+#navContainer .navList #navItem-holonews a:hover,
+#navContainer .navList #navItem-holonews a.active { background-position: -115px 0px; }
+
+#navContainer .navList #navItem-temple a { background-position: 0px -16px; }
+#navContainer .navList #navItem-temple a:hover,
+#navContainer .navList #navItem-temple a.active { background-position: -115px -16px; }
+
+#navContainer .navList #navItem-archives a { background-position: 0px -32px; }
+#navContainer .navList #navItem-archives a:hover,
+#navContainer .navList #navItem-archives a.active { background-position: -115px -32px; }
+
+#navContainer .navList #navItem-residents a { background-position: 0px -48px; }
+#navContainer .navList #navItem-residents a:hover,
+#navContainer .navList #navItem-residents a.active { background-position: -115px -48px; }
+
+#navContainer .navList #navItem-data a { background-position: 0px -64px; }
+#navContainer .navList #navItem-data a:hover,
+#navContainer .navList #navItem-data a.active { background-position: -115px -64px; }
+
+#navContainer .navList #navItem-about a { background-position: 0px -80px; }
+#navContainer .navList #navItem-about a:hover,
+#navContainer .navList #navItem-about a.active { background-position: -115px -80px; }
 
 
 

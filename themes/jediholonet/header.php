@@ -44,7 +44,7 @@
   <div id="headerJoinLeft"></div>
   <div id="headerJoinRight"></div>
   <div id="navFrame"></div>
-  <ul id="navList">
+  <ul class="navList">
 <?php
 make_nav_button_by_name(null, 'Galactic Holonews &amp; Holonews Archives');
 make_nav_button_by_name('temple', 'Temple Information, Laws and Tips');

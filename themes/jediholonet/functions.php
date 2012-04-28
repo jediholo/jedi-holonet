@@ -21,7 +21,7 @@ add_action('init', 'my_init');
 function my_head() {
 	$timezone = get_timezone_offset()*1000;
 	echo <<<EOF
-<script src="//static.jediholo.net/js/site.js" type="text/javascript"></script>
+<script src="//static.jediholo.net/js/global-min.js" type="text/javascript"></script>
 <script type="text/javascript">
 // <![CDATA[
 timezone = $timezone;
@@ -301,10 +301,10 @@ add_filter('next_post_link', 'my_adjacent_post_link');
 /*******************************/
 
 function make_nav_button($url, $name, $title, $help = '', $active = false) {
-	$class = 'navItem';
-	if ($active) $class .= ' active';
+	$liClass = 'navItem' . ($active ? ' active' : '');
+	$aClass = ($active ? 'active' : '');
 
-	echo "    <li class=\"{$class}\" id=\"navItem-{$name}\"><a href=\"{$url}\">{$title}</a>\n";
+	echo "    <li class=\"{$liClass}\" id=\"navItem-{$name}\"><a href=\"{$url}\" class=\"{$aClass}\">{$title}</a>\n";
 	echo "      <ul><li>{$help}</li></ul>\n";
 	echo "    </li>\n";
 }
