@@ -30,8 +30,7 @@
   <h1><?php bloginfo('name'); ?></h1>
   <img id="logo" src="<?php bloginfo('stylesheet_directory'); ?>/images/header_logo.png" alt="JEDI Holonet Logo" />
   <ul id="mainNav">
-    <!--<li id="mainNav-login"><a href="https://id.jediholo.net/cas/">Login/logout</a></li>-->
-    <li id="mainNav-holonet"><a href="//www.jediholo.net">HoloNet</a></li>
+    <li id="mainNav-holonet" class="active"><a href="//www.jediholo.net">HoloNet</a></li>
     <li id="mainNav-comport"><a href="//comport.jediholo.net">Comport</a></li>
     <li id="mainNav-rpmod"><a href="//rpmod.jediholo.net">RPMod</a></li>
   </ul>
