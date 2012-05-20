@@ -36,11 +36,23 @@ add_action('wp_head', 'my_head');
 /* Sidebars */
 /************/
 
-if ( function_exists('register_sidebars') ) {
-	register_sidebars($GLOBALS['JEDI_config']['numSidebars'], array(
+if ( function_exists('register_sidebar') ) {
+	register_sidebar(array(
+		'name' => 'Header',
+		'id' => 'sidebar-header',
+		'description' => 'Widgets displayed in the main column, before articles',
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	));
+	for ($i = 1; $i <= $GLOBALS['JEDI_config']['numSidebars']; $i++) {
+		register_sidebar(array(
+			'name' => "Sidebar $i",
+			'id' => "sidebar-$i",
+			'description' => 'Widgets displayed on the right of the main column',
+			'before_title' => '<h4 class="widgettitle">',
+			'after_title' => '</h4>',
+		));
+	}
 }
 
 

@@ -193,6 +193,11 @@ Author URI: http://www.jediholo.net
 	margin-top: -5px;
 	width: 250px;
 }
+.sidebar#sidebar-header {
+	float: none;
+	width: auto;
+	margin: 5px 0 15px;
+}
 
 .sidebar ul:first-child {
 	list-style-type: none;

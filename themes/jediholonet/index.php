@@ -26,6 +26,8 @@
 
     <div class="narrowcolumn" id="narrowcolumn-<?php echo get_root_name(); ?>">
 
+<?php get_sidebar('header'); ?>
+
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <!-- Post #<?php the_ID(); ?> -->
     <div class="box">
