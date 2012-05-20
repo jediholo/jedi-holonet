@@ -16,7 +16,7 @@ $GLOBALS['JEDI_config'] = array(
 	
 	// RPMod configuration
 	'rpmod' => array(
-		'soapClientWSDL' => 'http://rpmod.jediholo.net/service/RPModService.php5?wsdl',
+		'soapClientWSDL' => 'http://rpmod.jediholo.net/ws/LegacyService/wsdl/v/043/',
 		'soapClientOptions' => array(
 			'login'		=> 'JEDI',
 			'password'	=> 'n56swiupRlaQlAkI'
