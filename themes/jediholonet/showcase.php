@@ -16,7 +16,7 @@ Template Name: Showcase
 <?php wp_head(); ?>
 </head>
 
-<body>
+<body<?php if ($style = get_post_meta($post->ID, 'body_style', true)) echo " style=\"$style\"" ?>>
 
 <div class="showcase">
 <p style="text-align: center;"><a href="<?php echo get_posts_url(); ?>">Proceed to <?php echo get_bloginfo('blogname'); ?> &raquo;</a></p>

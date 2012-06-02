@@ -18,6 +18,7 @@ body {
 	color: #999999;
 	border-bottom: 1px dotted #999999;
 	text-decoration: none;
+	text-shadow: 1px 1px 2px black;
 }
 .showcase a:hover {
 	border-bottom: 1px solid #999999;
