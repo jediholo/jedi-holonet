@@ -35,14 +35,18 @@ body {
 	background-color: #444444;
 	background-image: url("//static.jediholo.net/img/content_bg.gif");
 	background-repeat: repeat;
+	border-radius: 10px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
 }
 
 .showcase-content blockquote {
 	padding: 10px;
 	background-color: transparent;
 	background-image: url("//static.jediholo.net/img/box_bg.png");
+	border-radius: 10px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
 }
