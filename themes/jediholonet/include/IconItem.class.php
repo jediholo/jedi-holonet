@@ -14,13 +14,11 @@ class IconItem {
 	}
 	
 	public function __toString() {
-		$item = "<img src=\"{$this->icon}\" title=\"{$this->title}\" alt=\"{$this->title}\" /><strong>";
+		$item = "<img src=\"{$this->icon}\" title=\"{$this->title}\" alt=\"{$this->title}\" /><strong>{$this->title}</strong>";
 		if (!empty($this->link)) {
 			$rel = !empty($this->group) ? " rel=\"{$this->group}\"" : '';
 			$boxed = $this->boxed ? ' class="lbpModal"' : '';
-			$item .= "<a href=\"{$this->link}\" title=\"{$this->title}\"{$rel}{$boxed}>{$this->title}</a>";
-		} else {
-			$item .= $this->title;
+			$item = "<a href=\"{$this->link}\" title=\"{$this->title}\"{$rel}{$boxed}>{$item}</a>";
 		}
 		$item .= "</strong><br />{$this->subtitle1}<br />{$this->subtitle2}";
 		return $item;

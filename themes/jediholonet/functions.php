@@ -25,6 +25,7 @@ function my_head() {
 <script type="text/javascript">
 // <![CDATA[
 timezone = $timezone;
+jQuery.ajaxSetup({cache: false});
 // ]]>
 </script>
 EOF;
