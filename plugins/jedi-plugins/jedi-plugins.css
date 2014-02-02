@@ -1,0 +1,20 @@
+/***************/
+/* Search form */
+/***************/
+
+#searchform {
+	padding: 0 100px 0 2px;
+	background-color: transparent;
+}
+
+#searchform #s {
+	float: left;
+	width: 100%;
+	margin: 0;
+}
+
+#searchform #searchsubmit {
+	float: left;
+	width: 80px;
+	margin: 0 -100px 0 2px;
+}
