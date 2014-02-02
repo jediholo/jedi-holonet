@@ -263,31 +263,6 @@ Author URI: http://www.jediholo.net
 }
 
 
-
-/***************/
-/* Search form */
-/***************/
-
-#searchform {
-	padding-right: 65px;
-}
-
-#searchform #searchform-query {
-	float: left;
-	width: 100%;
-}
-
-#searchform #searchform-query #s {
-	width: 100%;
-}
-
-#searchform #searchform-submit {
-	float: right;
-	margin-right: -65px;
-}
-
-
-
 /******************/
 /* RPMod features */
 /******************/

@@ -1,10 +1,5 @@
 <?php
 require_once('include/config.inc.php');
-require_once('widgets/JEDI_Widget_Context.php');
-require_once('widgets/JEDI_Widget_Pages.php');
-require_once('widgets/JEDI_Widget_Recent_Pages.php');
-require_once('widgets/JEDI_Widget_Recent_Posts.php');
-require_once('widgets/JEDI_Widget_Tracker.php');
 
 
 /*************/
@@ -55,28 +50,6 @@ if ( function_exists('register_sidebar') ) {
 		));
 	}
 }
-
-
-/**************/
-/* Shortcodes */
-/**************/
-
-function search_shortcode() {
-	$query = get_search_query();
-	$url = get_bloginfo('url');
-	return <<<EOF
-<form method="get" id="searchform" action="$url/">
-  <div id="searchform-query">
-    <input type="text" value="$query" name="s" id="s" />
-  </div>
-  <div id="searchform-submit">
-    <input type="submit" id="searchsubmit" value="Search" />
-  </div>
-  <div class="clear"></div>
-</form>
-EOF;
-}
-add_shortcode('search', 'search_shortcode');
 
 
 /***************************/
