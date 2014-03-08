@@ -7,7 +7,7 @@ function isAjax() {
 }
 
 function colorReplaceCallback($m) {
-	return "<span style='colorcode-{$m[1]}'>{$m[2]}</span>";
+	return "<span class='colorcode-{$m[1]}'>{$m[2]}</span>";
 }
 
 function sanitizeString($string, $color = true) {
