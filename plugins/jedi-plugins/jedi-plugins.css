@@ -18,3 +18,70 @@
 	width: 80px;
 	margin: 0 -100px 0 2px;
 }
+
+/***************/
+/* Color codes */
+/***************/
+
+.colorcode-0 { color: black; }
+.colorcode-1 { color: red; }
+.colorcode-2 { color: lime; }
+.colorcode-3 { color: yellow; }
+.colorcode-4 { color: blue; }
+.colorcode-5 { color: cyan; }
+.colorcode-6 { color: magenta; }
+.colorcode-7 { color: white; }
+.colorcode-8 { color: #FF7F00; }
+.colorcode-9 { color: #7F00CC; }
+.colorcode-A { color: #964B00; }
+.colorcode-B { color: #FFCBA4; }
+.colorcode-C { color: #00CCCC; }
+.colorcode-D { color: #000080; }
+.colorcode-E { color: #4F2683; }
+.colorcode-F { color: #FFC0CB; }
+.colorcode-G { color: #007BA7; }
+.colorcode-H { color: #004953; }
+.colorcode-I { color: #F88379; }
+.colorcode-J { color: #008080; }
+.colorcode-K { color: #800000; }
+.colorcode-L { color: #A45A52; }
+.colorcode-M { color: #40826D; }
+.colorcode-N { color: #7F00FF; }
+.colorcode-O { color: #BEBEBE; }
+.colorcode-P { color: #36454F; }
+.colorcode-Q { color: #6699CC; }
+.colorcode-R { color: #E34234; }
+.colorcode-S { color: #C46210; }
+.colorcode-T { color: #D99058; }
+.colorcode-U { color: #E86100; }
+.colorcode-V { color: #CCCCFF; }
+.colorcode-W { color: #B0E0E6; }
+.colorcode-X { color: #ADD8E6; }
+.colorcode-Y { color: #89CFF0; }
+.colorcode-Z { color: #0000FF; }
+.colorcode-a { color: #3F00FF; }
+.colorcode-b { color: #00008B; }
+.colorcode-c { color: #1D2951; }
+.colorcode-d { color: #FFFFCC; }
+.colorcode-e { color: #EFCC00; }
+.colorcode-f { color: #FFD300; }
+.colorcode-g { color: #FFEF00; }
+.colorcode-h { color: #FFFF78; }
+.colorcode-i { color: #FADA5E; }
+.colorcode-j { color: #FFD700; }
+.colorcode-k { color: #C3B091; }
+.colorcode-l { color: #808000; }
+.colorcode-m { color: #E0115F; }
+.colorcode-n { color: #FF1493; }
+.colorcode-o { color: #FF6FFF; }
+.colorcode-p { color: #66023C; }
+.colorcode-q { color: #7851A9; }
+.colorcode-r { color: #702963; }
+.colorcode-s { color: #78184A; }
+.colorcode-t { color: #8F9779; }
+.colorcode-u { color: #87A96B; }
+.colorcode-v { color: #568203; }
+.colorcode-w { color: #ADFF2F; }
+.colorcode-x { color: #444C38; }
+.colorcode-y { color: #00563F; }
+.colorcode-z { color: #8A9A5B; }
