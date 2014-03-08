@@ -7,15 +7,14 @@ function isAjax() {
 }
 
 function colorReplaceCallback($m) {
-	$colorTable = array('black', 'red', 'lime', 'yellow', 'blue', 'cyan', 'magenta', 'white', 'black', 'black');
-	return "<span style='color:{$colorTable[$m[1]]}'>{$m[2]}</span>";
+	return "<span style='colorcode-{$m[1]}'>{$m[2]}</span>";
 }
 
 function sanitizeString($string, $color = true) {
 	if ($color == true) {
-		$sanitizedString = preg_replace_callback('~\^(\d)(.*?)(?=\^|$)~', 'colorReplaceCallback', $string);
+		$sanitizedString = preg_replace_callback('~\^([0-9a-zA-Z])(.*?)(?=\^|$)~', 'colorReplaceCallback', $string);
 	} else {
-		$sanitizedString = preg_replace('~\^\d~', '', $string);
+		$sanitizedString = preg_replace('~\^[0-9a-zA-Z]~', '', $string);
 	}
 	
 	return $sanitizedString;
