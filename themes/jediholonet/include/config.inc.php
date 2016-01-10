@@ -10,13 +10,13 @@ $GLOBALS['JEDI_config'] = array(
 
 	// Server tracker configuration
 	'tracker' => array(
-		'soapClientWSDL' => 'http://services.jediholo.net/tracker/service/TrackerService.php5?wsdl',
+		'soapClientWSDL' => 'https://services.jediholo.net/tracker/service/TrackerService.php5?wsdl',
 		'soapClientOptions' => array(),
 	),
 	
 	// RPMod configuration
 	'rpmod' => array(
-		'soapClientWSDL' => 'http://rpmod.jediholo.net/ws/LegacyService/wsdl/v/043/',
+		'soapClientWSDL' => 'https://rpmod.jediholo.net/ws/LegacyService/wsdl/v/043/',
 		'soapClientOptions' => array(
 			'login'		=> 'JEDI',
 			'password'	=> 'n56swiupRlaQlAkI'
