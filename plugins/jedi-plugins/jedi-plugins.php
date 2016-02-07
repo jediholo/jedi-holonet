@@ -18,6 +18,7 @@ add_action('init', 'jedi_plugins_init');
 function jedi_plugins_widgets_init() {
 	$widgets = array(
 		'JEDI_Widget_Context',
+		'JEDI_Widget_Page',
 		'JEDI_Widget_Pages',
 		'JEDI_Widget_Recent_Pages',
 		'JEDI_Widget_Recent_Posts',
