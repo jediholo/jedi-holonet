@@ -1,18 +1,10 @@
 <?php
-/**
- * ::JEDI:: Web Site
- * Code from the Tracker Interface
- * @file Tracker Web Service Client (with cache)
- * @version 0.2.0
- * @author Fabien CRESPEL
- */
-
 class TrackerClient {
 	private $client;
 	private $host;
 	private $port;
 	private $config = array(
-		'soapClientWSDL'	=> 'http://www.jediholo.net/tracker/TrackerService.php5?wsdl',
+		'soapClientWSDL'	=> 'https://rpmod.jediholo.net/ws/ServerService/wsdl/v/050',
 		'soapClientOptions'	=> array(),
 	);
 	private $info = null;
@@ -53,11 +45,12 @@ class TrackerClient {
 		}
 		
 		// Call the Web Service
-		$response = $this->client->getInfo($this->host, $this->port);
+		$response = $this->client->GetInfo(array('host' => $this->host, 'port' => $this->port));
+		$response = $response->GetInfoResult;
 		
-		// Convert the info KeyValuePair array to a simple PHP array
+		// Convert the info KeyValue array to a simple PHP array
 		$this->info = array();
-		foreach ($response->info as $kvp) {
+		foreach ($response->item as $kvp) {
 			$this->info[$kvp->key] = $kvp->value;
 		}
 		
@@ -75,19 +68,20 @@ class TrackerClient {
 		}
 		
 		// Call the Web Service
-		$response = $this->client->getStatus($this->host, $this->port);
+		$response = $this->client->GetStatus(array('host' => $this->host, 'port' => $this->port));
+		$response = $response->GetStatusResult;
 		
 		// Init
 		$this->status = array();
 		
-		// Convert the serverinfo KeyValuePair array to a simple PHP array
+		// Convert the serverinfo KeyValue array to a simple PHP array
 		$this->status['serverinfo'] = array();
-		foreach ($response->serverinfo as $kvp) {
+		foreach ($response->serverInfo->item as $kvp) {
 			$this->status['serverinfo'][$kvp->key] = $kvp->value;
 		}
 		
 		// Keep the players array
-		$this->status['players'] = $response->players;
+		$this->status['players'] = $response->players->item;
 		
 		return $this->status;
 	}
@@ -118,7 +112,7 @@ class TrackerClient {
 	 */
 	public function rcon($password, $command) {
 		// Simply call the Web Service
-		$response = $this->client->rcon($this->host, $this->port, $password, $command);
-		return $response->response;
+		$response = $this->client->Rcon(array('host' => $this->host, 'port' => $this->port, 'password' => $password, 'command' => $command));
+		return $response->RconResult;
 	}
 }

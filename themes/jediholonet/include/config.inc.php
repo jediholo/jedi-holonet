@@ -10,7 +10,7 @@ $GLOBALS['JEDI_config'] = array(
 
 	// Server tracker configuration
 	'tracker' => array(
-		'soapClientWSDL' => 'https://services.jediholo.net/tracker/service/TrackerService.php5?wsdl',
+		'soapClientWSDL' => 'https://rpmod.jediholo.net/ws/ServerService/wsdl/v/050/',
 		'soapClientOptions' => array(),
 	),
 	

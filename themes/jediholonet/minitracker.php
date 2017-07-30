@@ -6,20 +6,6 @@ function isAjax() {
 	return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest';
 }
 
-function colorReplaceCallback($m) {
-	return "<span class='colorcode-{$m[1]}'>{$m[2]}</span>";
-}
-
-function sanitizeString($string, $color = true) {
-	if ($color == true) {
-		$sanitizedString = preg_replace_callback('~\^([0-9a-zA-Z])(.*?)(?=\^|$)~', 'colorReplaceCallback', $string);
-	} else {
-		$sanitizedString = preg_replace('~\^[0-9a-zA-Z]~', '', $string);
-	}
-	
-	return $sanitizedString;
-}
-
 if (!isAjax()) {
 	die("This page must be downloaded from an XMLHttpRequest object (AJAX).");
 }
@@ -50,7 +36,7 @@ try {
 		$playersSection = "<a href=\"#\" onclick=\"slideToggle('{$id}-players'); return false;\">{$playersSection}</a>";
 		$playersSection .= "<div class=\"box\" style=\"display: none;\" id=\"{$id}-players\"><ul>\n";
 		foreach ($players as $player) {
-			$playersSection .= "<li>" . sanitizeString($player->name) . "</li>\n";
+			$playersSection .= "<li>{$player->colorizedName}</li>\n";
 		}
 		$playersSection .= "</ul></div>";
 	}
