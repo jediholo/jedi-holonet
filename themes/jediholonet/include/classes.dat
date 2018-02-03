@@ -20,7 +20,7 @@
 // 	// Level 1						// Use comments to find level numbers more easily in this file
 // 	{
 // 		minXP			500			// Total amount of XP needed to gain this level
-// 		forceTemplateMax	333333333333333333	// (Optional) Maximum Force template
+// 		forceTemplateMax	33333333333333333333	// (Optional) Maximum Force template
 // 		forceRegenTime		187			// (Optional) Force points regeneration time
 //		forcePowerMax		150			// (Optional) Maximum amount of Force points (default is 100)
 //		weapons			32			// (Optional) Weapons to give (here, E-11 Blaster)
@@ -121,7 +121,7 @@ Initiate
 	// Level 1
 	{
 		minXP			5
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		250
 		maxHealth		40
 		forcePowerMax		40
@@ -129,7 +129,7 @@ Initiate
 	// Level 2
 	{
 		minXP			10
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		245
 		maxHealth		45
 		forcePowerMax		45
@@ -137,7 +137,7 @@ Initiate
 	// Level 3
 	{
 		minXP			15
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		240
 		maxHealth		50
 		forcePowerMax		50
@@ -145,7 +145,7 @@ Initiate
 	// Level 4
 	{
 		minXP			20
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		235
 		maxHealth		55
 		forcePowerMax		55
@@ -153,7 +153,7 @@ Initiate
 	// Level 5
 	{
 		minXP			25
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		230
 		maxHealth		65
 		forcePowerMax		65
@@ -161,7 +161,7 @@ Initiate
 	// Level 6
 	{
 		minXP			35
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		225
 		maxHealth		70
 		forcePowerMax		70
@@ -169,7 +169,7 @@ Initiate
 	// Level 7
 	{
 		minXP			40
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		220
 		maxHealth		75
 		forcePowerMax		75
@@ -177,7 +177,7 @@ Initiate
 	// Level 8
 	{
 		minXP			50
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		215
 		maxHealth		80
 		forcePowerMax		80
@@ -185,7 +185,7 @@ Initiate
 	// Level 9
 	{
 		minXP			65
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		210
 		maxHealth		85
 		forcePowerMax		85
@@ -193,7 +193,7 @@ Initiate
 	// Level 10
 	{
 		minXP			80
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		205
 		maxHealth		95
 		forcePowerMax		95
@@ -201,7 +201,7 @@ Initiate
 	// Level 11
 	{
 		minXP			100
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		200
 		maxHealth		100
 		forcePowerMax		100
@@ -209,7 +209,7 @@ Initiate
 	// Level 12
 	{
 		minXP			130
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		195
 		maxHealth		105
 		forcePowerMax		105
@@ -217,7 +217,7 @@ Initiate
 	// Level 13
 	{
 		minXP			160
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		190
 		maxHealth		110
 		forcePowerMax		110
@@ -225,7 +225,7 @@ Initiate
 	// Level 14
 	{
 		minXP			205
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		185
 		maxHealth		115
 		forcePowerMax		115
@@ -233,7 +233,7 @@ Initiate
 	// Level 15
 	{
 		minXP			260
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		180
 		maxHealth		125
 		forcePowerMax		125
@@ -241,7 +241,7 @@ Initiate
 	// Level 16
 	{
 		minXP			325
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		175
 		maxHealth		130
 		forcePowerMax		130
@@ -249,7 +249,7 @@ Initiate
 	// Level 17
 	{
 		minXP			410
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		170
 		maxHealth		140
 		forcePowerMax		140
@@ -257,7 +257,7 @@ Initiate
 	// Level 18
 	{
 		minXP			515
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		165
 		maxHealth		150
 		forcePowerMax		150
@@ -265,7 +265,7 @@ Initiate
 	// Level 19
 	{
 		minXP			650
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		160
 		maxHealth		160
 		forcePowerMax		160
@@ -273,7 +273,7 @@ Initiate
 	// Level 20
 	{
 		minXP			815
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		150
 		maxHealth		170
 		forcePowerMax		170
@@ -281,7 +281,7 @@ Initiate
 	// Level 21
 	{
 		minXP			1030
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		140
 		maxHealth		175
 		forcePowerMax		175
@@ -289,7 +289,7 @@ Initiate
 	// Level 22
 	{
 		minXP			1300
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		130
 		maxHealth		180
 		forcePowerMax		180
@@ -297,7 +297,7 @@ Initiate
 	// Level 23
 	{
 		minXP			1635
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		120
 		maxHealth		185
 		forcePowerMax		185
@@ -305,7 +305,7 @@ Initiate
 	// Level 24
 	{
 		minXP			2065
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		110
 		maxHealth		190
 		forcePowerMax		190
@@ -313,7 +313,7 @@ Initiate
 	// Level 25
 	{
 		minXP			2600
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		100
 		maxHealth		200
 		forcePowerMax		200
@@ -329,7 +329,7 @@ Padawan
 	// Level 1
 	{
 		minXP			5
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		230
 		maxHealth		60
 		forcePowerMax		60
@@ -337,7 +337,7 @@ Padawan
 	// Level 2
 	{
 		minXP			10
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		225
 		maxHealth		65
 		forcePowerMax		65
@@ -345,7 +345,7 @@ Padawan
 	// Level 3
 	{
 		minXP			15
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		220
 		maxHealth		70
 		forcePowerMax		70
@@ -353,7 +353,7 @@ Padawan
 	// Level 4
 	{
 		minXP			20
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		215
 		maxHealth		75
 		forcePowerMax		75
@@ -361,7 +361,7 @@ Padawan
 	// Level 5
 	{
 		minXP			25
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		205
 		maxHealth		85
 		forcePowerMax		85
@@ -369,7 +369,7 @@ Padawan
 	// Level 6
 	{
 		minXP			35
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		200
 		maxHealth		90
 		forcePowerMax		90
@@ -377,7 +377,7 @@ Padawan
 	// Level 7
 	{
 		minXP			40
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		195
 		maxHealth		95
 		forcePowerMax		95
@@ -385,7 +385,7 @@ Padawan
 	// Level 8
 	{
 		minXP			50
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		190
 		maxHealth		100
 		forcePowerMax		100
@@ -393,7 +393,7 @@ Padawan
 	// Level 9
 	{
 		minXP			65
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		185
 		maxHealth		105
 		forcePowerMax		105
@@ -401,7 +401,7 @@ Padawan
 	// Level 10
 	{
 		minXP			80
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		175
 		maxHealth		115
 		forcePowerMax		115
@@ -409,7 +409,7 @@ Padawan
 	// Level 11
 	{
 		minXP			100
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		170
 		maxHealth		120
 		forcePowerMax		120
@@ -417,7 +417,7 @@ Padawan
 	// Level 12
 	{
 		minXP			130
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		165
 		maxHealth		125
 		forcePowerMax		125
@@ -425,7 +425,7 @@ Padawan
 	// Level 13
 	{
 		minXP			160
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		160
 		maxHealth		130
 		forcePowerMax		130
@@ -433,7 +433,7 @@ Padawan
 	// Level 14
 	{
 		minXP			205
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		155
 		maxHealth		135
 		forcePowerMax		135
@@ -441,7 +441,7 @@ Padawan
 	// Level 15
 	{
 		minXP			260
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		145
 		maxHealth		145
 		forcePowerMax		145
@@ -449,7 +449,7 @@ Padawan
 	// Level 16
 	{
 		minXP			325
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		140
 		maxHealth		150
 		forcePowerMax		150
@@ -457,7 +457,7 @@ Padawan
 	// Level 17
 	{
 		minXP			410
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		135
 		maxHealth		155
 		forcePowerMax		155
@@ -465,7 +465,7 @@ Padawan
 	// Level 18
 	{
 		minXP			515
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		130
 		maxHealth		160
 		forcePowerMax		160
@@ -473,7 +473,7 @@ Padawan
 	// Level 19
 	{
 		minXP			650
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		125
 		maxHealth		165
 		forcePowerMax		165
@@ -481,7 +481,7 @@ Padawan
 	// Level 20
 	{
 		minXP			815
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		115
 		maxHealth		175
 		forcePowerMax		175
@@ -489,7 +489,7 @@ Padawan
 	// Level 21
 	{
 		minXP			1030
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		105
 		maxHealth		185
 		forcePowerMax		185
@@ -497,7 +497,7 @@ Padawan
 	// Level 22
 	{
 		minXP			1300
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		95
 		maxHealth		195
 		forcePowerMax		195
@@ -505,7 +505,7 @@ Padawan
 	// Level 23
 	{
 		minXP			1635
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		85
 		maxHealth		205
 		forcePowerMax		205
@@ -513,7 +513,7 @@ Padawan
 	// Level 24
 	{
 		minXP			2065
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		75
 		maxHealth		215
 		forcePowerMax		215
@@ -521,7 +521,7 @@ Padawan
 	// Level 25
 	{
 		minXP			2600
-		forceTemplateMax	333333333333333333
+		forceTemplateMax	33333333333333333333
 		forceRegenTime		65
 		maxHealth		225
 		forcePowerMax		225
@@ -537,7 +537,7 @@ Knight
 	// Level 1
 	{
 		minXP			5
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		215
 		maxHealth		70
 		forcePowerMax		70
@@ -545,7 +545,7 @@ Knight
 	// Level 2
 	{
 		minXP			10
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		210
 		maxHealth		75
 		forcePowerMax		75
@@ -553,7 +553,7 @@ Knight
 	// Level 3
 	{
 		minXP			15
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		205
 		maxHealth		80
 		forcePowerMax		80
@@ -561,7 +561,7 @@ Knight
 	// Level 4
 	{
 		minXP			20
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		200
 		maxHealth		85
 		forcePowerMax		85
@@ -569,7 +569,7 @@ Knight
 	// Level 5
 	{
 		minXP			25
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		195
 		maxHealth		95
 		forcePowerMax		95
@@ -577,7 +577,7 @@ Knight
 	// Level 6
 	{
 		minXP			35
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		190
 		maxHealth		100
 		forcePowerMax		100
@@ -585,7 +585,7 @@ Knight
 	// Level 7
 	{
 		minXP			40
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		185
 		maxHealth		105
 		forcePowerMax		105
@@ -593,7 +593,7 @@ Knight
 	// Level 8
 	{
 		minXP			50
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		180
 		maxHealth		110
 		forcePowerMax		110
@@ -601,7 +601,7 @@ Knight
 	// Level 9
 	{
 		minXP			65
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		175
 		maxHealth		115
 		forcePowerMax		115
@@ -609,7 +609,7 @@ Knight
 	// Level 10
 	{
 		minXP			80
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		170
 		maxHealth		125
 		forcePowerMax		125
@@ -617,7 +617,7 @@ Knight
 	// Level 11
 	{
 		minXP			100
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		165
 		maxHealth		130
 		forcePowerMax		130
@@ -625,7 +625,7 @@ Knight
 	// Level 12
 	{
 		minXP			130
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		160
 		maxHealth		135
 		forcePowerMax		135
@@ -633,7 +633,7 @@ Knight
 	// Level 13
 	{
 		minXP			160
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		155
 		maxHealth		140
 		forcePowerMax		140
@@ -641,7 +641,7 @@ Knight
 	// Level 14
 	{
 		minXP			205
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		150
 		maxHealth		145
 		forcePowerMax		145
@@ -649,7 +649,7 @@ Knight
 	// Level 15
 	{
 		minXP			260
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		145
 		maxHealth		155
 		forcePowerMax		155
@@ -657,7 +657,7 @@ Knight
 	// Level 16
 	{
 		minXP			325
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		135
 		maxHealth		160
 		forcePowerMax		160
@@ -665,7 +665,7 @@ Knight
 	// Level 17
 	{
 		minXP			410
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		125
 		maxHealth		170
 		forcePowerMax		170
@@ -673,7 +673,7 @@ Knight
 	// Level 18
 	{
 		minXP			515
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		115
 		maxHealth		175
 		forcePowerMax		175
@@ -681,7 +681,7 @@ Knight
 	// Level 19
 	{
 		minXP			650
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		105
 		maxHealth		180
 		forcePowerMax		180
@@ -689,7 +689,7 @@ Knight
 	// Level 20
 	{
 		minXP			815
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		95
 		maxHealth		190
 		forcePowerMax		190
@@ -697,7 +697,7 @@ Knight
 	// Level 21
 	{
 		minXP			1030
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		85
 		maxHealth		195
 		forcePowerMax		195
@@ -705,7 +705,7 @@ Knight
 	// Level 22
 	{
 		minXP			1300
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		75
 		maxHealth		200
 		forcePowerMax		200
@@ -721,7 +721,7 @@ Master
 	// Level 1
 	{
 		minXP			5
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		200
 		maxHealth		100
 		forcePowerMax		100
@@ -729,7 +729,7 @@ Master
 	// Level 2
 	{
 		minXP			10
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		195
 		maxHealth		105
 		forcePowerMax		105
@@ -737,7 +737,7 @@ Master
 	// Level 3
 	{
 		minXP			15
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		190
 		maxHealth		110
 		forcePowerMax		110
@@ -745,7 +745,7 @@ Master
 	// Level 4
 	{
 		minXP			20
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		185
 		maxHealth		115
 		forcePowerMax		115
@@ -753,7 +753,7 @@ Master
 	// Level 5
 	{
 		minXP			25
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		175
 		maxHealth		120
 		forcePowerMax		120
@@ -761,7 +761,7 @@ Master
 	// Level 6
 	{
 		minXP			35
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		170
 		maxHealth		125
 		forcePowerMax		125
@@ -769,7 +769,7 @@ Master
 	// Level 7
 	{
 		minXP			40
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		165
 		maxHealth		130
 		forcePowerMax		130
@@ -777,7 +777,7 @@ Master
 	// Level 8
 	{
 		minXP			50
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		160
 		maxHealth		135
 		forcePowerMax		135
@@ -785,7 +785,7 @@ Master
 	// Level 9
 	{
 		minXP			65
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		155
 		maxHealth		140
 		forcePowerMax		140
@@ -793,7 +793,7 @@ Master
 	// Level 10
 	{
 		minXP			80
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		145
 		maxHealth		145
 		forcePowerMax		145
@@ -801,7 +801,7 @@ Master
 	// Level 11
 	{
 		minXP			100
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		140
 		maxHealth		150
 		forcePowerMax		150
@@ -809,7 +809,7 @@ Master
 	// Level 12
 	{
 		minXP			130
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		135
 		maxHealth		155
 		forcePowerMax		155
@@ -817,7 +817,7 @@ Master
 	// Level 13
 	{
 		minXP			160
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		130
 		maxHealth		160
 		forcePowerMax		160
@@ -825,7 +825,7 @@ Master
 	// Level 14
 	{
 		minXP			205
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		125
 		maxHealth		165
 		forcePowerMax		165
@@ -833,7 +833,7 @@ Master
 	// Level 15
 	{
 		minXP			260
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		115
 		maxHealth		175
 		forcePowerMax		175
@@ -841,7 +841,7 @@ Master
 	// Level 16
 	{
 		minXP			325
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		110
 		maxHealth		185
 		forcePowerMax		185
@@ -849,7 +849,7 @@ Master
 	// Level 17
 	{
 		minXP			410
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		105
 		maxHealth		195
 		forcePowerMax		195
@@ -857,7 +857,7 @@ Master
 	// Level 18
 	{
 		minXP			515
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		100
 		maxHealth		205
 		forcePowerMax		205
@@ -865,7 +865,7 @@ Master
 	// Level 19
 	{
 		minXP			650
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		95
 		maxHealth		215
 		forcePowerMax		215
@@ -873,7 +873,7 @@ Master
 	// Level 20
 	{
 		minXP			815
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		85
 		maxHealth		225
 		forcePowerMax		225
@@ -881,7 +881,7 @@ Master
 	// Level 21
 	{
 		minXP			1030
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		75
 		maxHealth		235
 		forcePowerMax		235
@@ -889,7 +889,7 @@ Master
 	// Level 22
 	{
 		minXP			1300
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		65
 		maxHealth		245
 		forcePowerMax		245
@@ -897,7 +897,7 @@ Master
 	// Level 23
 	{
 		minXP			1635
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		55
 		maxHealth		255
 		forcePowerMax		255
@@ -905,7 +905,7 @@ Master
 	// Level 24
 	{
 		minXP			2065
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		45
 		maxHealth		255
 		forcePowerMax		255
@@ -913,7 +913,7 @@ Master
 	// Level 25
 	{
 		minXP			2600
-		forceTemplateMax	555555555555555555
+		forceTemplateMax	55555555555555555555
 		forceRegenTime		40
 		maxHealth		255
 		forcePowerMax		255
