@@ -157,7 +157,7 @@ function printAccountInfo($username) {
 						if ($GLOBALS['rpmod_config']['restrictForce'] && isset($curLevel) && isset($curLevel['forceTemplateMax']) && (!isset($curLevel['forceTemplateMax'][$power]) || $powerLevel >= $curLevel['forceTemplateMax'][$power])) {
 							// Class-restricted
 							echo '    <td class="ft_disabled">[' . $forcePowerCost[$power][$powerLevel] . "]</td>\n";
-						} else if ($GLOBALS['rpmod_config']['lockTemplate'] && isset($account['forceTemplateMax'][$power]) && $powerLevel >= $account['forceTemplateMax'][$power]) {
+						} else if ($GLOBALS['rpmod_config']['lockTemplate'] && (!isset($account['forceTemplateMax'][$power]) || $powerLevel >= $account['forceTemplateMax'][$power])) {
 							// New power
 							if ($forcePowerCost[$power][$powerLevel] <= $curUnusedPoints) {
 								// We can buy this one
