@@ -2,7 +2,6 @@
 /*
 Template Name: Biography
 */
-require_once(TEMPLATEPATH . '/include/AccountInfo.inc.php');
 ?>
 <?php if (!isAjax()) : ?>
 <?php get_header(); ?>
@@ -138,14 +137,12 @@ if (!empty($image)) {
 
           <!-- Account Information: generated from RPMod -->
           <div id="account" class="tabContent">
-            <h3>Account Information</h3>
-            <div class="box">
-              <?php if (!empty($username)) : ?>
-                <?php printAccountInfo($username); ?>
-              <?php else : ?>
-                <p>No account information available.</p>
-              <?php endif; ?>
-            </div>
+			<?php if (!empty($username)) : ?>
+			  <iframe src="//rpmod.jediholo.net/character/view/userName/<?php echo $username; ?>?layout=embedded" width="100%" height="1200" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="height: 1200px;"></iframe>
+            <?php else : ?>
+              <h3>Account Information</h3>
+              <p>No account information available.</p>
+            <?php endif; ?>
           </div>
 
         </div>

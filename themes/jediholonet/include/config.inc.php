@@ -21,5 +21,13 @@ $GLOBALS['JEDI_config'] = array(
 			'login'		=> 'JEDI',
 			'password'	=> 'n56swiupRlaQlAkI'
 		),
+		'ranks' => array (
+			'Guest',
+			'Initiate',
+			'Padawan',
+			'Knight',
+			'Master',
+			'Council member'
+		),
 	),
 );

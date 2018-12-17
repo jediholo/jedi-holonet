@@ -2,7 +2,6 @@
 /*
 Template Name: Residents
 */
-require_once(TEMPLATEPATH . '/include/RPMod.inc.php');
 require_once(TEMPLATEPATH . '/include/IconList.class.php');
 ?>
 <?php if (!isAjax()) : ?>
@@ -44,7 +43,7 @@ try {
 	
 	// Print all accounts, grouped by rank, excluding Guests
 	for ($i = 5; $i > 0; $i--) {
-		echo "<h3>{$GLOBALS['rpmod_config']['ranks'][$i]}s</h3>\n";
+		echo "<h3>{$GLOBALS['JEDI_config']['rpmod']['ranks'][$i]}s</h3>\n";
 		$list = new IconList();
 		
 		foreach ($accounts as $account) {
