@@ -269,10 +269,15 @@ function my_get_comment_date( $value, $d = '' ) {
 }
 //add_filter('get_comment_date', 'my_get_comment_date', 10, 2);
 
-function my_date_i18n( $value, $dateformatstring, $unixtimestamp, $gmt) {
+function my_date_i18n( $value, $dateformatstring, $unixtimestamp, $gmt ) {
 	return parse_jedi_format($value, $unixtimestamp);
 }
-add_filter('date_i18n', 'my_date_i18n', 10, 4);
+//add_filter('date_i18n', 'my_date_i18n', 10, 4);
+
+function my_wp_date( $date, $format, $timestamp, $timezone ) {
+	return parse_jedi_format($date, $timestamp);
+}
+add_filter('wp_date', 'my_wp_date', 10, 4);
 
 function my_adjacent_post_link($value) {
 	return "<li>{$value}</li>\n";
