@@ -45,23 +45,23 @@ $reputation = $custom['reputation'][0];
 $biography = get_the_content();
 
 if (!empty($abilities)) {
-	$abilities = wptexturize(wpautop($abilities));
+    $abilities = wptexturize(wpautop($abilities));
 }
 if (!empty($reputation)) {
-	$reputation = wptexturize(wpautop($reputation));
+    $reputation = wptexturize(wpautop($reputation));
 }
 
 $imageUrl = null;
 if (empty($image) && !empty($username)) $image = $username . '_bio';
 if (!empty($image)) {
-	if (substr($image, 0, 7) == 'http://') {
-		$imageUrl = $image;
-	} else {
-		$imageAtt = get_attachment_by_name($image);
-		if ($imageAtt !== null) {
-			$imageUrl = wp_get_attachment_url($imageAtt->ID);
-		}
-	}
+    if (substr($image, 0, 7) == 'http://') {
+        $imageUrl = $image;
+    } else {
+        $imageAtt = get_attachment_by_name($image);
+        if ($imageAtt !== null) {
+            $imageUrl = wp_get_attachment_url($imageAtt->ID);
+        }
+    }
 }
 ?>
     <!-- Post #<?php the_ID(); ?> -->
@@ -137,8 +137,8 @@ if (!empty($image)) {
 
           <!-- Account Information: generated from RPMod -->
           <div id="account" class="tabContent">
-			<?php if (!empty($username)) : ?>
-			  <iframe src="//rpmod.jediholo.net/character/view/userName/<?php echo $username; ?>?layout=embedded" width="100%" height="1200" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="height: 1200px;"></iframe>
+            <?php if (!empty($username)) : ?>
+              <iframe src="//rpmod.jediholo.net/character/view/userName/<?php echo $username; ?>?layout=embedded&theme=jediholo" width="100%" height="1200" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="height: 1200px;"></iframe>
             <?php else : ?>
               <h3>Account Information</h3>
               <p>No account information available.</p>
