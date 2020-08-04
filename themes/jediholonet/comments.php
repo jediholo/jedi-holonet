@@ -29,7 +29,7 @@
         <em>Your comment is awaiting moderation.</em>
 <?php endif; ?>
         <br />
-        <small class="commentmetadata"><a href="#comment-<?php comment_ID(); ?>" title=""><span title="<?php comment_date(get_option('date_format')); ?>"><?php comment_date('J.d'); ?></span> at <?php comment_time(); ?></a> <?php edit_comment_link('edit','&nbsp;&nbsp;',''); ?></small>
+        <small class="commentmetadata"><a href="#comment-<?php comment_ID(); ?>" title=""><span title="<?php comment_date('Y-m-d'); ?>"><?php comment_date(); ?></span> at <?php comment_time(); ?></a> <?php edit_comment_link('edit','&nbsp;&nbsp;',''); ?></small>
 <?php comment_text() ?>
       </li>
 <?php

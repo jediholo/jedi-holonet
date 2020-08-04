@@ -33,7 +33,7 @@
         <h4>
           <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">
             <?php if ($post->post_type != 'page') : ?>
-            <span title="<?php the_time(get_option('date_format')); ?>"><?php the_time('J.d'); ?></span> //
+            <span title="<?php the_time('Y-m-d'); ?>"><?php the_time(get_option('date_format')); ?></span> //
             <?php endif; ?>
             <?php the_title(); ?>
           </a>

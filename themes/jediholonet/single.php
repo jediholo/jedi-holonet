@@ -26,7 +26,7 @@
     <!-- Post #<?php the_ID(); ?> -->
     <div class="box">
       <div class="post" id="post-<?php the_ID(); ?>">
-        <h4><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><span title="<?php the_time(get_option('date_format')); ?>"><?php the_time('J.d'); ?></span> // <?php the_title(); ?></a></h4>
+        <h4><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><span title="<?php the_time('Y-m-d'); ?>"><?php the_time(get_option('date_format')); ?></span> // <?php the_title(); ?></a></h4>
 
         <ul class="post-categories">
           <?php foreach (get_the_category() as $category) : ?>
@@ -46,7 +46,7 @@
     <div class="box">
 <?php the_tags( '      <p class="postmetadata">Tags: ', ', ', '</p>'); ?>
       <p class="postmetadata">
-        This entry was posted on <span title="<?php the_time(get_option('date_format')); ?>"><?php the_time('J.d'); ?></span> at <?php the_time(); ?> and is filed under <?php the_category(', '); ?>.
+        This entry was posted on <span title="<?php the_time('Y-m-d'); ?>"><?php the_time(get_option('date_format')); ?></span> at <?php the_time(); ?> and is filed under <?php the_category(', '); ?>.
 
 <?php if ('open' == $post-> comment_status) : ?>
         You can follow any responses to this entry through the <?php post_comments_feed_link('RSS 2.0'); ?> feed.

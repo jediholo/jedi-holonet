@@ -51,7 +51,6 @@ make_nav_button_by_name('archives', 'Temple Historical Archives');
 make_nav_button_by_name('residents', 'Jedi of the Temple');
 make_nav_button_by_name('data', 'Files and Landing Requirements');
 make_nav_button_by_name('about', 'Discover more about JEDI');
-//make_nav_button('//comport.jediholo.net', 'comport', 'Comport', 'Communications Port');
 ?>
   </ul>
   <div id="clock"></div>

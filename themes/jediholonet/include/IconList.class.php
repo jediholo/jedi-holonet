@@ -1,5 +1,5 @@
 <?php
-require_once('IconItem.class.php');
+require_once(__DIR__ . '/IconItem.class.php');
 
 class IconList {
 	private $items = array();

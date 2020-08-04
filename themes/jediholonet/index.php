@@ -32,7 +32,7 @@
     <!-- Post #<?php the_ID(); ?> -->
     <div class="box">
       <div class="post" id="post-<?php the_ID(); ?>">
-        <h4><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><span title="<?php the_time(get_option('date_format')); ?>"><?php the_time('J.d'); ?></span> // <?php the_title(); ?></a></h4>
+        <h4><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><span title="<?php the_time('Y-m-d'); ?>"><?php the_time(get_option('date_format')); ?></span> // <?php the_title(); ?></a></h4>
 
         <ul class="post-categories">
           <?php foreach (get_the_category() as $category) : ?>

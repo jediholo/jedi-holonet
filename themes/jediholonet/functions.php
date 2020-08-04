@@ -1,6 +1,4 @@
 <?php
-require_once('include/config.inc.php');
-
 
 /*************/
 /* Init/Head */
@@ -20,7 +18,6 @@ function my_head() {
 <script type="text/javascript">
 // <![CDATA[
 timezone = $timezone;
-jQuery.ajaxSetup({cache: false});
 // ]]>
 </script>
 EOF;
@@ -40,7 +37,7 @@ if ( function_exists('register_sidebar') ) {
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	));
-	for ($i = 1; $i <= $GLOBALS['JEDI_config']['numSidebars']; $i++) {
+	for ($i = 1; $i <= 5; $i++) {
 		register_sidebar(array(
 			'name' => "Sidebar $i",
 			'id' => "sidebar-$i",
@@ -144,140 +141,20 @@ function get_root_name() {
 	return $name;
 }
 
-function get_page_id_by_name($name) {
-	$page = get_page_by_path($name);
-	return $page ? $page->ID : 0;
-}
-
 function get_attachment_by_name($name) {
 	$att = get_posts("post_type=attachment&attachment={$name}&name={$name}");
 	return (count($att) > 0) ? $att[0] : null;
 }
 
-function get_the_title_ellipsis($max) {
-	$title = get_the_title();
-	if ($max > 0 && strlen($title) > $max) {
-		return substr($title,  0, $max-3) . '&hellip;';
-	} else {
-		return $title;
-	}
-}
-
-
-
-/*****************************/
-/* SW/JEDI date/time support */
-/*****************************/
-
 function get_timezone_offset() {
-	$date = new DateTime('now', new DateTimeZone('America/New_York'));
+	$date = new DateTime('now', wp_timezone());
 	return $date->getOffset();
 }
-
-function get_jedi_year($timestamp) {
-	$baseRL = 2000;
-	$baseSW = 153;
-
-	$dateRL = getdate($timestamp);
-	$yearOffset = $dateRL['year'] - $baseRL;
-	$yearSW = $baseSW + ($yearOffset * 12) + $dateRL['mon'];
-
-	return $yearSW;
-}
-
-function parse_jedi_format($format, $timestamp) {
-	$jedi_year = get_jedi_year($timestamp);
-
-	$format = ' ' . $format;
-	$format = preg_replace( "/([^\\\])J/", '${1}' . $jedi_year, $format );
-	$format = substr( $format, 1, strlen( $format ) -1 );
-
-	return $format;
-}
-
 
 
 /*********************/
 /* Wordpress filters */
 /*********************/
-
-function my_get_post_time( $value, $d = 'U', $gmt = false ) {
-	global $post;
-
-	$time = $gmt ? $post->post_date_gmt : $post->post_date;
-
-	$timestamp = mysql2date('U', $time);
-	$d = parse_jedi_format($d, $timestamp);
-
-	return mysql2date($d, $time);
-}
-//add_filter('get_post_time', 'my_get_post_time', 10, 3);
-
-function my_get_post_modified_time( $value, $d = 'U', $gmt = false ) {
-	global $post;
-
-	$time = $gmt ? $post->post_modified_gmt : $post->post_modified;
-	
-	$timestamp = mysql2date('U', $time);
-	$d = parse_jedi_format($d, $timestamp);
-
-	return mysql2date($d, $time);
-}
-//add_filter('get_post_modified_time', 'my_get_post_modified_time', 10, 3);
-
-function my_the_date($the_date, $d='', $before='', $after='') {
-	global $post;
-
-	$the_date = '';
-	if ($value != '') {
-		$timestamp = mysql2date('U', $post->post_date);
-
-		if ($d == '') $d = get_option('date_format');
-		$d = parse_jedi_format($d, $timestamp);
-
-		$the_date .= $before;
-		$the_date .= mysql2date($d, $post->post_date);
-		$the_date .= $after;
-	}
-	return $the_date;
-}
-//add_filter('the_date', 'my_the_date', 10, 4);
-
-function my_get_comment_time( $value, $d = '', $gmt = false ) {
-	global $comment;
-
-	$comment_date = $gmt ? $comment->comment_date_gmt : $comment->comment_date;
-
-	$timestamp = mysql2date('U', $comment_date);
-
-	if ($d == '') $d = get_option('time_format');
-	$d = parse_jedi_format($d, $timestamp);
-
-	return mysql2date($d, $comment_date);
-}
-//add_filter('get_comment_time', 'my_get_comment_time', 10, 3);
-
-function my_get_comment_date( $value, $d = '' ) {
-	global $comment;
-
-	$timestamp = mysql2date('U', $comment->comment_date);
-
-	if ($d == '') $d = get_option('date_format');
-	$d = parse_jedi_format($d, $timestamp);
-
-	return mysql2date($d, $comment->comment_date);
-}
-//add_filter('get_comment_date', 'my_get_comment_date', 10, 2);
-
-function my_date_i18n( $value, $dateformatstring, $unixtimestamp, $gmt ) {
-	return parse_jedi_format($value, $unixtimestamp);
-}
-//add_filter('date_i18n', 'my_date_i18n', 10, 4);
-
-function my_wp_date( $date, $format, $timestamp, $timezone ) {
-	return parse_jedi_format($date, $timestamp);
-}
-add_filter('wp_date', 'my_wp_date', 10, 4);
 
 function my_adjacent_post_link($value) {
 	return "<li>{$value}</li>\n";

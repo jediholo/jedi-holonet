@@ -1,10 +1,10 @@
 /*  
 Theme Name: JEDI Holonet
-Theme URI: http://www.jediholo.net
+Theme URI: https://www.jediholo.net
 Description: JEDI Holonet Theme
-Version: 1.6
+Version: 1.7
 Author: Fabien Crespel (code) & Ctathos Ederoi (design)
-Author URI: http://www.jediholo.net
+Author URI: https://www.jediholo.net
 */
 
 
@@ -230,24 +230,6 @@ Author URI: http://www.jediholo.net
 }
 
 
-/*--------------------------*/
-/* Q3 Server Tracker Widget */
-/*--------------------------*/
-
-.widget_tracker {
-	position: relative;
-}
-.widget_tracker .refresh {
-	position: absolute;
-	top: 0;
-	right: 2px;
-	height: 16px;
-	padding: 2px 0 0 20px;
-	background-repeat: no-repeat;
-	background-position: top left;
-}
-
-
 /*------------------------*/
 /* Google Events Calendar */
 /*------------------------*/
@@ -263,39 +245,4 @@ Author URI: http://www.jediholo.net
 .sidebar .gce-widget-list .gce-list ul {
 	list-style-type: square;
 	margin: 0 0 10px 15px;
-}
-
-
-/******************/
-/* RPMod features */
-/******************/
-
-.ft_table {
-	font-weight: bold;
-}
-.ft_title {
-	text-align: right;
-}
-.ft_on {
-	color: #00BFFF;
-	text-align: center;
-}
-.ft_off {
-	color: #808080;
-	text-align: center;
-}
-.ft_disabled {
-	color: #CC5555;
-	text-align: center;
-}
-.ft_unavailable {
-	color: #BBBBBB;
-	text-align: center;
-}
-.ft_new {
-	color: #55CC55;
-	text-align: center;
-}
-.ft_points {
-	padding-left: 10px;
 }
