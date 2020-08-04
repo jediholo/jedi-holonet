@@ -1,0 +1,35 @@
+version: '3.5'
+services:
+  wordpress:
+    build:
+      context: .
+      args:
+        BASE_IMAGE: wordpress:latest
+    ports:
+      - '127.0.0.11:80:80'
+    volumes:
+      - './.docker/wordpress:/var/www/html'
+      - './plugins/jedi-plugins:/var/www/html/wp-content/plugins/jedi-plugins'
+      - './themes/jediholonet:/var/www/html/wp-content/themes/jediholonet'
+    environment:
+      - WORDPRESS_DB_HOST=mysql
+      - WORDPRESS_DB_USER=jediholo
+      - WORDPRESS_DB_PASSWORD=jediholo
+      - WORDPRESS_DB_NAME=jedi-wordpress
+  wp-cli:
+    image: wordpress:cli
+    user: '33:33'
+    volumes:
+      - './.docker/wordpress:/var/www/html'
+      - './plugins/jedi-plugins:/var/www/html/wp-content/plugins/jedi-plugins'
+      - './themes/jediholonet:/var/www/html/wp-content/themes/jediholonet'
+  mysql:
+    image: fcrespel/mariadb:10.4-opensuse15
+    ports:
+      - '127.0.0.11:3306:3306'
+    volumes:
+      - './.docker/mysql:/var/lib/mysql'
+    environment:
+      MYSQL_USER: jediholo
+      MYSQL_PASSWORD: jediholo
+      MYSQL_DATABASE: jedi-wordpress
