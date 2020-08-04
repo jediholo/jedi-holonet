@@ -30,10 +30,10 @@ class RPModAccountServiceClient {
 
 	/**
 	 * Get User objects from the database.
-     * @param int $offset position to start from
-     * @param int $limit number of User objects to return (max 100)
-     * @param string $order sort order as '<field> [ASC|DESC]'
-     * @param string $filter custom filter as '<field> <operator> <value>[, <field> <operator> <value> ...]'
+	 * @param int $offset position to start from
+	 * @param int $limit number of User objects to return (max 100)
+	 * @param string $order sort order as '<field> [ASC|DESC]'
+	 * @param string $filter custom filter as '<field> <operator> <value>[, <field> <operator> <value> ...]'
 	 * @return object[] User objects
 	 */
 	public function getUsers($offset = 0, $limit = 10, $order = 'userName', $filter = '') {
