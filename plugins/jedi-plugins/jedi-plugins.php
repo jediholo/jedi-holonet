@@ -1,20 +1,25 @@
 <?php
 /*
 Plugin Name: JEDI Plugins
-Description: A collection of Wordpress extensions.
-Version: 1.0
+Description: A collection of Wordpress extensions for the JEDI HoloNet.
+Version: 1.1
 Author: Fabien CRESPEL
-Author URI: http://www.jediholo.net
+Author URI: https://www.jediholo.net
 */
 
-require_once('functions.php');
+require_once(__DIR__ . '/functions.php');
 
+// Main init
 function jedi_plugins_init() {
-	wp_enqueue_style('jedi-plugins', plugins_url('jedi-plugins.css', __FILE__));
+	wp_enqueue_style('jedi-plugins', plugins_url('public/jedi-plugins.css', __FILE__));
+	wp_enqueue_script('jedi-plugins', plugins_url('public/jedi-plugins.js.php', __FILE__), array('jquery'));
 	add_shortcode('search', 'jedi_search_shortcode');
+	add_shortcode('rpmod-accounts', 'jedi_accounts_shortcode');
+	add_shortcode('rpmod-server', 'jedi_server_shortcode');
 }
 add_action('init', 'jedi_plugins_init');
 
+// Widgets init
 function jedi_plugins_widgets_init() {
 	$widgets = array(
 		'JEDI_Widget_Context',
@@ -26,8 +31,14 @@ function jedi_plugins_widgets_init() {
 	);
 
 	foreach ($widgets as $widget) {
-		require_once("widgets/$widget.php");
+		require_once(__DIR__ . "/widgets/$widget.php");
 		register_widget($widget);
 	}
 }
 add_action('widgets_init', 'jedi_plugins_widgets_init');
+
+// Date filter
+function jedi_plugins_wp_date( $date, $format, $timestamp, $timezone ) {
+	return jedi_parse_date_format($date, $timestamp);
+}
+add_filter('wp_date', 'jedi_plugins_wp_date', 10, 4);

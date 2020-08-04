@@ -2,7 +2,7 @@
 class JEDI_Widget_Recent_Pages extends WP_Widget {
 
 	function JEDI_Widget_Recent_Pages() {
-		$widget_ops = array('classname' => 'widget_recent_pages', 'description' => __( "The most recent pages") );
+		$widget_ops = array('classname' => 'jedi_widget_recent_pages', 'description' => __( "The most recent pages") );
 		$this->WP_Widget('jwidget_recent_pages', __('JEDI: Recent Pages'), $widget_ops);
 		
 		add_action( 'save_post', array(&$this, 'flush_widget_cache') );
@@ -11,7 +11,7 @@ class JEDI_Widget_Recent_Pages extends WP_Widget {
 	}
 
 	function widget($args, $instance) {
-		$cache = wp_cache_get('widget_recent_pages', 'widget');
+		$cache = wp_cache_get('jedi_widget_recent_pages', 'widget');
 
 		if ( !is_array($cache) )
 			$cache = array();
@@ -23,7 +23,7 @@ class JEDI_Widget_Recent_Pages extends WP_Widget {
 		extract($args);
 
 		$title = apply_filters('widget_title', empty($instance['title']) ? __('Recent Pages') : $instance['title']);
-		$parent = empty($instance['parent']) ? '' : get_page_id_by_name($instance['parent']);
+		$parent = empty($instance['parent']) ? '' : jedi_get_page_id_by_name($instance['parent']);
 		$maxlength = intval($instance['maxlength']);
 		if ( !$number = (int) $instance['number'] )
 			$number = 5;
@@ -46,9 +46,9 @@ class JEDI_Widget_Recent_Pages extends WP_Widget {
 			if ( !empty( $title ) ) { echo $before_title . $title . $after_title; }
 			echo "<ul>\n";
 			
-			for ($i = 0; $i < $number; $i++) : $post = $r[$i]; setup_postdata($post);
-?><li><?php if ($instance['display_date']) : ?><span title="<?php the_modified_date(); ?>"><?php the_modified_date('J.d'); ?></span>: <?php endif; ?>
-<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php echo get_the_title_ellipsis($maxlength); ?></a></li><?php
+			for ($i = 0; $i < count($r); $i++) : $post = $r[$i]; setup_postdata($post);
+?><li><?php if ($instance['display_date']) : ?><span title="<?php the_modified_date('Y-m-d'); ?>"><?php the_modified_date(); ?></span>: <?php endif; ?>
+<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php echo jedi_get_the_title_ellipsis($maxlength); ?></a></li><?php
 			endfor;
 			
 			echo "</ul>\n";
@@ -58,7 +58,7 @@ class JEDI_Widget_Recent_Pages extends WP_Widget {
 		endif;
 		
 		$cache[$args['widget_id']] = ob_get_flush();
-		wp_cache_set('widget_recent_pages', $cache, 'widget');
+		wp_cache_set('jedi_widget_recent_pages', $cache, 'widget');
 	}
 
 	function update( $new_instance, $old_instance ) {
@@ -73,7 +73,7 @@ class JEDI_Widget_Recent_Pages extends WP_Widget {
 	}
 	
 	function flush_widget_cache() {
-		wp_cache_delete('widget_recent_pages', 'widget');
+		wp_cache_delete('jedi_widget_recent_pages', 'widget');
 	}
 
 	function form( $instance ) {

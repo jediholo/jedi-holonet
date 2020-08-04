@@ -2,7 +2,7 @@
 class JEDI_Widget_Recent_Posts extends WP_Widget_Recent_Posts {
 
 	function JEDI_Widget_Recent_Posts() {
-		$widget_ops = array('classname' => 'widget_recent_entries', 'description' => __( "The most recent posts on your blog") );
+		$widget_ops = array('classname' => 'jedi_widget_recent_entries', 'description' => __( "The most recent posts on your blog") );
 		$this->WP_Widget('jwidget_recent_posts', __('JEDI: Recent Posts'), $widget_ops);
 
 		add_action( 'save_post', array(&$this, 'flush_widget_cache') );
@@ -11,7 +11,7 @@ class JEDI_Widget_Recent_Posts extends WP_Widget_Recent_Posts {
 	}
 	
 	function widget($args, $instance) {
-		$cache = wp_cache_get('widget_recent_posts', 'widget');
+		$cache = wp_cache_get('jedi_widget_recent_posts', 'widget');
 
 		if ( !is_array($cache) )
 			$cache = array();
@@ -38,8 +38,8 @@ class JEDI_Widget_Recent_Posts extends WP_Widget_Recent_Posts {
 			echo "<ul>\n";
 			
 			while ($r->have_posts()) : $r->the_post();
-?><li><?php if ($instance['display_date']) : ?><span title="<?php the_time(get_option('date_format')); ?>"><?php the_time('J.d'); ?></span>: <?php endif; ?>
-<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php echo get_the_title_ellipsis($maxlength); ?></a></li><?php
+?><li><?php if ($instance['display_date']) : ?><span title="<?php the_time('Y-m-d'); ?>"><?php the_time(get_option('date_format')); ?></span>: <?php endif; ?>
+<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php echo jedi_get_the_title_ellipsis($maxlength); ?></a></li><?php
 			endwhile;
 			
 			echo "</ul>\n";
@@ -49,14 +49,19 @@ class JEDI_Widget_Recent_Posts extends WP_Widget_Recent_Posts {
 		endif;
 
 		$cache[$args['widget_id']] = ob_get_flush();
-		wp_cache_add('widget_recent_posts', $cache, 'widget');
+		wp_cache_add('jedi_widget_recent_posts', $cache, 'widget');
 	}
 	
 	function update( $new_instance, $old_instance ) {
 		$instance = parent::update($new_instance, $old_instance);
 		$instance['display_date'] = isset($new_instance['display_date']);
 		$instance['maxlength'] = intval($new_instance['maxlength']);
+		$this->flush_widget_cache();
 		return $instance;
+	}
+	
+	function flush_widget_cache() {
+		wp_cache_delete('jedi_widget_recent_posts', 'widget');
 	}
 	
 	function form( $instance ) {

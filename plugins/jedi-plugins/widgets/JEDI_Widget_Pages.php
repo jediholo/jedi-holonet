@@ -2,7 +2,7 @@
 class JEDI_Widget_Pages extends WP_Widget_Pages {
 
 	function JEDI_Widget_Pages() {
-		$widget_ops = array('classname' => 'widget_pages', 'description' => __( 'Your blog&#8217;s WordPress Pages') );
+		$widget_ops = array('classname' => 'jedi_widget_pages', 'description' => __( 'Your blog&#8217;s WordPress Pages') );
 		$this->WP_Widget('jwidget_pages', __('JEDI: Pages'), $widget_ops);
 	}
 	
@@ -12,7 +12,7 @@ class JEDI_Widget_Pages extends WP_Widget_Pages {
 		$title = apply_filters('widget_title', empty( $instance['title'] ) ? __( 'Pages' ) : $instance['title']);
 		$sortby = empty( $instance['sortby'] ) ? 'menu_order' : $instance['sortby'];
 		$exclude = empty( $instance['exclude'] ) ? '' : $instance['exclude'];
-		$parent = empty($instance['parent']) ? '' : get_page_id_by_name($instance['parent']);
+		$parent = empty($instance['parent']) ? '' : jedi_get_page_id_by_name($instance['parent']);
 		$depth = intval($instance['depth']);
 		if ($depth < 0) $depth = 0;
 

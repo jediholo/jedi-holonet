@@ -19,6 +19,35 @@
 	margin: 0 -100px 0 2px;
 }
 
+
+/*************************/
+/* Server Tracker Widget */
+/*************************/
+
+.jedi_widget_tracker {
+	position: relative;
+}
+
+.jedi_widget_tracker .refresh {
+	position: absolute;
+	top: 0;
+	right: 2px;
+	height: 16px;
+	padding: 2px 0 0 20px;
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+
+.jedi_widget_tracker .players {
+	word-break: break-all;
+}
+
+.jedi_widget_tracker .players a {
+	border-bottom: 0 !important;
+	text-decoration: none !important;
+}
+
+
 /***************/
 /* Color codes */
 /***************/

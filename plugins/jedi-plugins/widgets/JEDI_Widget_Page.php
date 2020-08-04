@@ -2,7 +2,7 @@
 class JEDI_Widget_Page extends WP_Widget {
 
 	function JEDI_Widget_Page() {
-		$widget_ops = array('classname' => 'widget_context', 'description' => __('Display a page as a widget'));
+		$widget_ops = array('classname' => 'jedi_widget_page', 'description' => __('Display a page as a widget'));
 		$this->WP_Widget('jwidget_page', __('JEDI: Page'), $widget_ops);
 	}
 	

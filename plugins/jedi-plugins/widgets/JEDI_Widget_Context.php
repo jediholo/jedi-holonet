@@ -2,7 +2,7 @@
 class JEDI_Widget_Context extends WP_Widget {
 
 	function JEDI_Widget_Context() {
-		$widget_ops = array('classname' => 'widget_context', 'description' => __('Page context message (search, archives, category, etc.)'));
+		$widget_ops = array('classname' => 'jedi_widget_context', 'description' => __('Page context message (search, archives, category, etc.)'));
 		$this->WP_Widget('jwidget_context', __('JEDI: Context'), $widget_ops);
 	}
 	
@@ -14,9 +14,9 @@ class JEDI_Widget_Context extends WP_Widget {
 	if (is_category()) { ?>
           <p>You are currently browsing the <a href="<?php bloginfo('url'); ?>/"><?php echo bloginfo('name'); ?></a> HoloNews Archives for the <strong><?php single_cat_title(''); ?></strong> category.</p>
 <?php } elseif (is_day()) { ?>
-          <p>You are currently browsing the <a href="<?php bloginfo('url'); ?>/"><?php echo bloginfo('name'); ?></a> HoloNews archives for <strong><span title="<?php the_time('F j, Y'); ?>"><?php the_time('J.d'); ?></span></strong>.</p>
+          <p>You are currently browsing the <a href="<?php bloginfo('url'); ?>/"><?php echo bloginfo('name'); ?></a> HoloNews archives for <strong><span title="<?php the_time('F j, Y'); ?>"><?php the_time(get_option('date_format')); ?></span></strong>.</p>
 <?php } elseif (is_month()) { ?>
-          <p>You are currently browsing the <a href="<?php bloginfo('url'); ?>/"><?php echo bloginfo('name'); ?></a> HoloNews archives for the year <strong><span title="<?php the_time('F, Y'); ?>"><?php the_time('J'); ?></span></strong>.</p>
+          <p>You are currently browsing the <a href="<?php bloginfo('url'); ?>/"><?php echo bloginfo('name'); ?></a> HoloNews archives for the year <strong><span title="<?php the_time('F, Y'); ?>"><?php the_time('$J'); ?></span></strong>.</p>
 <?php } elseif (is_year()) { ?>
           <p>You are currently browsing the <a href="<?php bloginfo('url'); ?>/"><?php echo bloginfo('name'); ?></a> HoloNews archives for the RL year <strong><?php the_time('Y'); ?></strong>.</p>
 <?php } elseif (is_search()) { ?>

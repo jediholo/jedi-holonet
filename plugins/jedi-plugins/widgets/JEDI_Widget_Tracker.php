@@ -2,7 +2,7 @@
 class JEDI_Widget_Tracker extends WP_Widget {
 
 	function JEDI_Widget_Tracker() {
-		$widget_ops = array('classname' => 'widget_tracker', 'description' => __('Q3 Server Tracker using AJAX'));
+		$widget_ops = array('classname' => 'jedi_widget_tracker', 'description' => __('Server Tracker using AJAX'));
 		$this->WP_Widget('jwidget_tracker', __('JEDI: Server Tracker'), $widget_ops);
 	}
 	
@@ -12,7 +12,7 @@ class JEDI_Widget_Tracker extends WP_Widget {
 		
 		echo $before_widget;
 		if ( !empty( $title ) ) { echo $before_title . $title . $after_title; }
-		echo "<ul><li><dl><dt>IP: </dt><dd>" . $instance['server'] . "</dd></dl></li></ul>\n";
+		echo "<ul><li><dl><dt>Server: </dt><dd>" . $instance['server'] . "</dd></dl></li></ul>\n";
 		echo $after_widget;
 	}
 	
