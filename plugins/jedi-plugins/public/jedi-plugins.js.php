@@ -1,3 +1,4 @@
+<?php header('Content-Type: text/javascript'); ?>
 // Server Tracker Widget
 function initServerTrackers() {
 	jQuery('.jedi_widget_tracker').each(function() {
