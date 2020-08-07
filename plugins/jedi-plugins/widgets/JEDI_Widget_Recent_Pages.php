@@ -46,7 +46,7 @@ class JEDI_Widget_Recent_Pages extends WP_Widget {
 			if ( !empty( $title ) ) { echo $before_title . $title . $after_title; }
 			echo "<ul>\n";
 			
-			for ($i = 0; $i < count($r); $i++) : $post = $r[$i]; setup_postdata($post);
+			for ($i = 0; $i < min($number, count($r)); $i++) : $post = $r[$i]; setup_postdata($post);
 ?><li><?php if ($instance['display_date']) : ?><span title="<?php the_modified_date('Y-m-d'); ?>"><?php the_modified_date(); ?></span>: <?php endif; ?>
 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php echo jedi_get_the_title_ellipsis($maxlength); ?></a></li><?php
 			endfor;
