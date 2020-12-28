@@ -10,17 +10,20 @@ class JEDI_IconItem {
 	
 	public function __construct($title) {
 		$this->setTitle($title);
-		$this->setIcon();
 	}
 	
 	public function __toString() {
-		$item = "<img src=\"{$this->icon}\" title=\"{$this->title}\" alt=\"{$this->title}\" /><strong>{$this->title}</strong>";
+		$style = empty($this->icon) ? '' : " style=\"background-image: url('{$this->icon}')\"";
+		$item = "<span class=\"img\"{$style} title=\"{$this->title}\"></span>";
+		$item .= "<strong>{$this->title}</strong>";
 		if (!empty($this->link)) {
 			$rel = !empty($this->group) ? " rel=\"{$this->group}\"" : '';
 			$boxed = $this->boxed ? ' class="lbpModal"' : '';
 			$item = "<a href=\"{$this->link}\" title=\"{$this->title}\"{$rel}{$boxed}>{$item}</a>";
 		}
-		$item .= "</strong><br />{$this->subtitle1}<br />{$this->subtitle2}";
+		$item .= "<br />{$this->subtitle1}";
+		$item .= "<br />{$this->subtitle2}";
+		$item = "<li class=\"iconitem\">{$item}</li>";
 		return $item;
 	}
 	
@@ -37,9 +40,9 @@ class JEDI_IconItem {
 	}
 	
 	public function setIcon($icon = null) {
-		$iconUrl = get_bloginfo('stylesheet_directory') . '/images/icon_default.png';
+		$iconUrl = null;
 		if (!empty($icon)) {
-			if (substr($icon, 0, 7) == 'http://') {
+			if (substr($icon, 0, 7) == 'http://' || substr($icon, 0, 8) == 'https://') {
 				$iconUrl = $icon;
 			} else {
 				$iconAtt = jedi_get_attachment_by_name($icon);

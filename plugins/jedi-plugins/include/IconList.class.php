@@ -9,7 +9,7 @@ class JEDI_IconList {
 		if (count($this->items) > 0) {
 			$list = "<ul class=\"iconlist\">\n";
 			foreach ($this->items as $item) {
-				$list .= "<li>" . $item . "</li>\n";
+				$list .= $item . "\n";
 			}
 			$list .= "</ul>\n";
 			$list .= "<div class=\"clear\"></div>\n";
