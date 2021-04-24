@@ -9,19 +9,10 @@
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<!--[if lt IE 7]>
-<link rel="stylesheet" href="//static.jediholo.net/css/ie6.css" type="text/css" />
-<script src="//static.jediholo.net/js/IE9.js" type="text/javascript">IE7_PNG_SUFFIX='.png';</script>
-<![endif]-->
-<!--[if lt IE 9]>
-<script src="//static.jediholo.net/js/DD_roundies_0.0.2a-min.js" type="text/javascript"></script>
-<![endif]-->
 <?php wp_head(); ?>
 </head>
 
 <body>
-
-<!--[if lt IE 7]><div style="height: 59px; position: relative;"><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div><![endif]-->
 
 <div id="mainContainer">
 

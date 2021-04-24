@@ -2,13 +2,14 @@
 Theme Name: JEDI Holonet
 Theme URI: https://www.jediholo.net
 Description: JEDI Holonet Theme
-Version: 1.7
+Version: 1.8
 Author: Fabien Crespel (code) & Ctathos Ederoi (design)
 Author URI: https://www.jediholo.net
 */
 
 
 @import url("//static.jediholo.net/css/style-min.css");
+@import url("//static.jediholo.net/css/colorbox-min.css");
 
 
 

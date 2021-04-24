@@ -14,6 +14,7 @@ add_action('init', 'my_init');
 function my_head() {
 	$timezone = get_timezone_offset()*1000;
 	echo <<<EOF
+<script src="//static.jediholo.net/libs/jquery.colorbox-1.5.14/jquery.colorbox-min.js" type="text/javascript"></script>
 <script src="//static.jediholo.net/js/global-min.js" type="text/javascript"></script>
 <script type="text/javascript">
 // <![CDATA[
@@ -23,6 +24,16 @@ timezone = $timezone;
 EOF;
 }
 add_action('wp_head', 'my_head');
+
+function my_footer() {
+	echo <<<EOF
+<script type="text/javascript">
+jQuery('.iconitem a.lbpModal').colorbox({opacity: 0.7, width: '800px', maxWidth: '80%', maxHeight: '90%', fixed: true, current: '{current} / {total}'});
+jQuery(".post .entry a:has(img[class*='wp-image-'])").colorbox({opacity: 0.7, maxWidth: '80%', maxHeight: '90%', fixed: true, current: '{current} / {total}'});
+</script>
+EOF;
+}
+add_action('wp_footer', 'my_footer');
 
 
 /************/
