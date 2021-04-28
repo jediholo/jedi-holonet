@@ -29,7 +29,7 @@ try {
 
 	// Display map section
 	$mapSection = $serverinfo['mapname'];
-	if ($currentMap != null) {
+	if ($currentMap != null && isset($currentMap->slug)) {
 		$mapSection = '<a href="//rpmod.jediholo.net/gameasset/view/name/' . $currentMap->slug . '">' . $mapSection . '</a>';
 	}
 	echo "<li><dl><dt>Map: </dt><dd>{$mapSection}</dd></dl></li>\n";
