@@ -13,10 +13,7 @@ docker-compose up -d
 # Fix permissions
 docker-compose exec wordpress bash -c "chown -R www-data:www-data /var/www/html"
 
-# Install Wordpress
-docker-compose run --rm wp-cli core install --url=www.dev.jediholo.net --title="JEDI HoloNet" --admin_user=admin --admin_password=admin --admin_email=admin@jediholo.net --skip-email
-
-# Configure Wordpress
+# Install and configure Wordpress
 docker-compose run --rm wp-cli bash -s < wp-setup.sh
 ```
 

@@ -24,7 +24,7 @@ services:
       - './plugins/jedi-plugins:/var/www/html/wp-content/plugins/jedi-plugins'
       - './themes/jediholonet:/var/www/html/wp-content/themes/jediholonet'
   mysql:
-    image: fcrespel/mariadb:10.4-opensuse15
+    image: ghcr.io/fab-infra/mariadb:10.4-opensuse15
     ports:
       - '127.0.0.11:3306:3306'
     volumes:

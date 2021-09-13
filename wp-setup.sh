@@ -3,6 +3,15 @@
 # Wordpress setup script, using WP-CLI.
 #
 
+# Install site
+wp core install --url=www.dev.jediholo.net --title="JEDI HoloNet" --admin_user=admin --admin_password=admin --admin_email=admin@jediholo.net --skip-email
+
+# Update if necessary
+wp core update
+wp core update-db
+wp plugin update --all
+wp theme update --all
+
 # Set options
 wp option update blogdescription 'The JEDI Order HoloNet'
 wp option update date_format '$J.d'
@@ -17,7 +26,8 @@ wp option update comment_registration '1'
 wp option update show_avatars '0'
 
 # Configure plugins/theme
-wp plugin install classic-editor embed-iframe google-calendar-events notification wonderm00ns-simple-facebook-open-graph-tags wptouch --activate
+wp plugin uninstall akismet hello.php
+wp plugin install classic-editor classic-widgets daggerhart-openid-connect-generic easy-wp-smtp embed-iframe google-calendar-events google-sitemap-generator notification wonderm00ns-simple-facebook-open-graph-tags wp-crontrol wp-super-cache wp-piwik wptouch --activate
 wp plugin activate jedi-plugins
 wp theme activate jediholonet
 
