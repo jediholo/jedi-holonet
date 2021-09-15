@@ -42,3 +42,9 @@ function jedi_plugins_wp_date( $date, $format, $timestamp, $timezone ) {
 	return jedi_parse_date_format($date, $timestamp);
 }
 add_filter('wp_date', 'jedi_plugins_wp_date', 10, 4);
+
+// OpenID Connect button text filter
+function jedi_plugins_openid_connect_button( $text ) {
+	return 'Login with RPMod';
+}
+add_filter('openid-connect-generic-login-button-text', 'jedi_plugins_openid_connect_button');
