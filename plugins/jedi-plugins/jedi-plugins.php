@@ -48,3 +48,9 @@ function jedi_plugins_openid_connect_button( $text ) {
 	return 'Login with RPMod';
 }
 add_filter('openid-connect-generic-login-button-text', 'jedi_plugins_openid_connect_button');
+
+// OpenID Connect user login test filter
+function jedi_plugins_openid_connect_user_login_test( $result, $user_claim ) {
+	return (isset($user_claim['communities']) && is_array($user_claim['communities']) && in_array('jedi', $user_claim['communities']));
+}
+add_filter('openid-connect-generic-user-login-test', 'jedi_plugins_openid_connect_user_login_test', 10, 2);
