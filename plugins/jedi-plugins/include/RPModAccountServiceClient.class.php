@@ -1,10 +1,12 @@
 <?php
+require_once(__DIR__ . '/JsonRpcClient.class.php');
+
 class RPModAccountServiceClient {
 
 	private $client;
 	private $config = array(
-		'soapClientWSDL'	=> 'https://rpmod.jediholo.net/ws/AccountService/wsdl/v/051/',
-		'soapClientOptions'	=> array(),
+		'url' 		=> 'https://rpmod.jediholo.net/ws/AccountService/jsonrpc/v/051',
+		'headers'	=> array(),
 	);
 
 	/**
@@ -13,7 +15,7 @@ class RPModAccountServiceClient {
 	 */
 	public function __construct($config = array()) {
 		$this->config = array_merge($this->config, $config);
-		$this->client = @ new SoapClient($this->config['soapClientWSDL'], $this->config['soapClientOptions']);
+		$this->client = new JsonRpcClient($this->config['url'], $this->config['headers']);
 	}
 
 	/**
@@ -23,9 +25,7 @@ class RPModAccountServiceClient {
 	 */
 	public function getUser($userName) {
 		// Call the Web Service
-		$response = $this->client->GetUser(array('userName' => $userName));
-		$response = $response->GetUserResult;
-		return $response;
+		return $this->client->GetUser(array('userName' => $userName));
 	}
 
 	/**
@@ -39,15 +39,14 @@ class RPModAccountServiceClient {
 	public function getUsers($offset = 0, $limit = 10, $order = 'userName', $filter = '') {
 		// Call the Web Service
 		$response = $this->client->GetUsers(array('offset' => $offset, 'limit' => $limit, 'order' => $order, 'filter' => $filter));
-		$response = $response->GetUsersResult;
 
 		// Process the response
 		$users = array();
-		if (isset($response->item)) {
-			if (is_array($response->item)) {
-				$users = $response->item;
+		if (isset($response)) {
+			if (is_array($response)) {
+				$users = $response;
 			} else {
-				$users = array($response->item);
+				$users = array($response);
 			}
 		}
 

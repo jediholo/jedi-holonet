@@ -1,12 +1,14 @@
 <?php
+require_once(__DIR__ . '/JsonRpcClient.class.php');
+
 class RPModServerServiceClient {
 
 	private $client;
 	private $host;
 	private $port;
 	private $config = array(
-		'soapClientWSDL'	=> 'https://rpmod.jediholo.net/ws/ServerService/wsdl/v/051/',
-		'soapClientOptions'	=> array(),
+		'url' 		=> 'https://rpmod.jediholo.net/ws/ServerService/jsonrpc/v/051',
+		'headers'	=> array(),
 	);
 	private $info = null;
 	private $status = null;
@@ -23,7 +25,7 @@ class RPModServerServiceClient {
 		$this->config = array_merge($this->config, $config);
 		$this->host = $host;
 		$this->port = $port;
-		$this->client = @ new SoapClient($this->config['soapClientWSDL'], $this->config['soapClientOptions']);
+		$this->client = new JsonRpcClient($this->config['url'], $this->config['headers']);
 	}
 
 	/**
@@ -54,11 +56,10 @@ class RPModServerServiceClient {
 
 		// Call the Web Service
 		$response = $this->client->GetInfo(array('host' => $this->host, 'port' => $this->port));
-		$response = $response->GetInfoResult;
 
 		// Convert the info KeyValue array to a simple PHP array
 		$this->info = array();
-		foreach ($response->item as $kvp) {
+		foreach ($response as $kvp) {
 			$this->info[$kvp->key] = $kvp->value;
 		}
 
@@ -77,24 +78,23 @@ class RPModServerServiceClient {
 
 		// Call the Web Service
 		$response = $this->client->GetStatus(array('host' => $this->host, 'port' => $this->port));
-		$response = $response->GetStatusResult;
 
 		// Init
 		$this->status = array();
 
 		// Convert the serverinfo KeyValue array to a simple PHP array
 		$this->status['serverinfo'] = array();
-		foreach ($response->serverInfo->item as $kvp) {
+		foreach ($response->serverInfo as $kvp) {
 			$this->status['serverinfo'][$kvp->key] = $kvp->value;
 		}
 
 		// Keep the players array
 		$this->status['players'] = array();
-		if (isset($response->players->item)) {
-			if (is_array($response->players->item)) {
-				$this->status['players'] = $response->players->item;
+		if (isset($response->players)) {
+			if (is_array($response->players)) {
+				$this->status['players'] = $response->players;
 			} else {
-				$this->status['players'] = array($response->players->item);
+				$this->status['players'] = array($response->players);
 			}
 		}
 
@@ -122,15 +122,14 @@ class RPModServerServiceClient {
 
 		// Call the Web Service
 		$response = $this->client->GetPlayers(array('host' => $this->host, 'port' => $this->port));
-		$response = $response->GetPlayersResult;
 
 		// Process the response
 		$this->players = array();
-		if (isset($response->item)) {
-			if (is_array($response->item)) {
-				$this->players = $response->item;
+		if (isset($response)) {
+			if (is_array($response)) {
+				$this->players = $response;
 			} else {
-				$this->players = array($response->item);
+				$this->players = array($response);
 			}
 		}
 
@@ -149,7 +148,9 @@ class RPModServerServiceClient {
 
 		// Call the Web Service
 		$response = $this->client->GetCurrentMap(array('host' => $this->host, 'port' => $this->port));
-		$response = $response->GetCurrentMapResult;
+
+		// Process the response
+		$this->currentMap = $response;
 
 		return $response;
 	}
@@ -162,8 +163,7 @@ class RPModServerServiceClient {
 	 */
 	public function rcon($password, $command) {
 		// Call the Web Service
-		$response = $this->client->Rcon(array('host' => $this->host, 'port' => $this->port, 'password' => $password, 'command' => $command));
-		return $response->RconResult;
+		return $this->client->Rcon(array('host' => $this->host, 'port' => $this->port, 'password' => $password, 'command' => $command));
 	}
 
 }
