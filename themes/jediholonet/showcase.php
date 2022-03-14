@@ -12,7 +12,7 @@ Template Name: Showcase
 <title><?php echo get_full_title(); ?></title>
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/showcase.css" type="text/css" />
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
-<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="apple-touch-icon" href="<?php bloginfo('stylesheet_directory'); ?>/images/apple-touch-icon.png" />
 <?php wp_head(); ?>
 </head>
 
