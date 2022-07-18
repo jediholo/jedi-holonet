@@ -44,7 +44,7 @@ class JsonRpcClient {
 		curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($req));
 		curl_setopt($curl, CURLOPT_HTTPHEADER, array_merge($this->headers, array('Accept: application/json', 'Content-Type: application/json')));
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($curl, CURLOPT_TIMEOUT, 10);
+		curl_setopt($curl, CURLOPT_TIMEOUT, 30);
 
 		// Execute request
 		$result = curl_exec($curl);
