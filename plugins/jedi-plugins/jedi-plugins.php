@@ -2,7 +2,7 @@
 /*
 Plugin Name: JEDI Plugins
 Description: A collection of Wordpress extensions for the JEDI HoloNet.
-Version: 1.1
+Version: 1.2
 Author: Fabien CRESPEL
 Author URI: https://www.jediholo.net
 */
