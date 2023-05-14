@@ -54,3 +54,17 @@ function jedi_plugins_openid_connect_user_login_test( $result, $user_claim ) {
 	return (isset($user_claim['communities']) && is_array($user_claim['communities']) && in_array('jedi', $user_claim['communities']));
 }
 add_filter('openid-connect-generic-user-login-test', 'jedi_plugins_openid_connect_user_login_test', 10, 2);
+
+// OpenID Connect update user action
+function jedi_plugins_openid_connect_update_user( $user, $user_claim ) {
+	if (isset($user_claim['admin_rank_num']) && !in_array('administrator', $user->roles)) {
+		if (intval($user_claim['admin_rank_num']) >= 5) {
+			// Grant Editor role to Council/God admins
+			$user->set_role('editor');
+		} else {
+			// Reset role to Subscriber
+			$user->set_role('subscriber');
+		}
+	}
+}
+add_action('openid-connect-generic-update-user-using-current-claim', 'jedi_plugins_openid_connect_update_user', 10, 2);
