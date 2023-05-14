@@ -1,16 +1,20 @@
 <?php
 class JEDI_Widget_Recent_Posts extends WP_Widget_Recent_Posts {
 
-	function JEDI_Widget_Recent_Posts() {
-		$widget_ops = array('classname' => 'jedi_widget_recent_entries', 'description' => __( "The most recent posts on your blog") );
-		$this->WP_Widget('jwidget_recent_posts', __('JEDI: Recent Posts'), $widget_ops);
+	public function __construct() {
+		parent::__construct();
+		$this->id_base = 'jwidget_recent_posts';
+		$this->name = __('JEDI: Recent Posts');
+		$this->option_name = 'widget_' . $this->id_base;
+		$this->widget_options['classname'] = 'jedi_widget_recent_entries';
+		$this->control_options['id_base'] = $this->id_base;
 
 		add_action( 'save_post', array(&$this, 'flush_widget_cache') );
 		add_action( 'deleted_post', array(&$this, 'flush_widget_cache') );
 		add_action( 'switch_theme', array(&$this, 'flush_widget_cache') );
 	}
-	
-	function widget($args, $instance) {
+
+	public function widget($args, $instance) {
 		$cache = wp_cache_get('jedi_widget_recent_posts', 'widget');
 
 		if ( !is_array($cache) )
@@ -51,27 +55,27 @@ class JEDI_Widget_Recent_Posts extends WP_Widget_Recent_Posts {
 		$cache[$args['widget_id']] = ob_get_flush();
 		wp_cache_add('jedi_widget_recent_posts', $cache, 'widget');
 	}
-	
-	function update( $new_instance, $old_instance ) {
+
+	public function update( $new_instance, $old_instance ) {
 		$instance = parent::update($new_instance, $old_instance);
 		$instance['display_date'] = isset($new_instance['display_date']);
 		$instance['maxlength'] = intval($new_instance['maxlength']);
 		$this->flush_widget_cache();
 		return $instance;
 	}
-	
-	function flush_widget_cache() {
+
+	public function flush_widget_cache() {
 		wp_cache_delete('jedi_widget_recent_posts', 'widget');
 	}
-	
-	function form( $instance ) {
+
+	public function form( $instance ) {
 		parent::form($instance);
 		$maxlength = intval($instance['maxlength']);
 ?>
 		<p><label for="<?php echo $this->get_field_id('maxlength'); ?>"><?php _e('Maximum title length:'); ?></label>
 		<input id="<?php echo $this->get_field_id('maxlength'); ?>" name="<?php echo $this->get_field_name('maxlength'); ?>" type="text" value="<?php echo $maxlength; ?>" size="3" /></p>
 		
-		<p><input id="<?php echo $this->get_field_id('display_date'); ?>" name="<?php echo $this->get_field_name('display_date'); ?>" type="checkbox" <?php checked($instance['display_date']); ?> />&nbsp;<label for="<?php echo $this->get_field_id('display_date'); ?>"><?php _e('Display page date'); ?></label></p>
+		<p><input id="<?php echo $this->get_field_id('display_date'); ?>" name="<?php echo $this->get_field_name('display_date'); ?>" type="checkbox" <?php checked($instance['display_date']); ?> />&nbsp;<label for="<?php echo $this->get_field_id('display_date'); ?>"><?php _e('Display post date'); ?></label></p>
 <?php
 	}
 }

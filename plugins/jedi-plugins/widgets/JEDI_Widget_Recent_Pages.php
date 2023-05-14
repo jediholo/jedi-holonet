@@ -1,16 +1,16 @@
 <?php
 class JEDI_Widget_Recent_Pages extends WP_Widget {
 
-	function JEDI_Widget_Recent_Pages() {
-		$widget_ops = array('classname' => 'jedi_widget_recent_pages', 'description' => __( "The most recent pages") );
-		$this->WP_Widget('jwidget_recent_pages', __('JEDI: Recent Pages'), $widget_ops);
+	public function __construct() {
+		$widget_ops = array('classname' => 'jedi_widget_recent_pages', 'description' => __('The most recent pages') );
+		parent::__construct('jwidget_recent_pages', __('JEDI: Recent Pages'), $widget_ops);
 		
 		add_action( 'save_post', array(&$this, 'flush_widget_cache') );
 		add_action( 'deleted_post', array(&$this, 'flush_widget_cache') );
 		add_action( 'switch_theme', array(&$this, 'flush_widget_cache') );
 	}
 
-	function widget($args, $instance) {
+	public function widget($args, $instance) {
 		$cache = wp_cache_get('jedi_widget_recent_pages', 'widget');
 
 		if ( !is_array($cache) )
@@ -37,7 +37,7 @@ class JEDI_Widget_Recent_Pages extends WP_Widget {
 			'sort_order' => 'desc',
 			'child_of' => $parent,
 		));
-		usort($r, create_function('$a, $b', 'return strcmp($b->post_modified, $a->post_modified);'));
+		usort($r, function($a, $b) { return strcmp($b->post_modified, $a->post_modified); });
 		
 		if (count($r) > 0) :
 			global $post;
@@ -61,7 +61,7 @@ class JEDI_Widget_Recent_Pages extends WP_Widget {
 		wp_cache_set('jedi_widget_recent_pages', $cache, 'widget');
 	}
 
-	function update( $new_instance, $old_instance ) {
+	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['parent'] = strip_tags($new_instance['parent']);
@@ -71,12 +71,12 @@ class JEDI_Widget_Recent_Pages extends WP_Widget {
 		$this->flush_widget_cache();
 		return $instance;
 	}
-	
-	function flush_widget_cache() {
+
+	public function flush_widget_cache() {
 		wp_cache_delete('jedi_widget_recent_pages', 'widget');
 	}
 
-	function form( $instance ) {
+	public function form( $instance ) {
 		$title = strip_tags($instance['title']);
 		$parent = strip_tags($instance['parent']);
 		if ( !$number = (int) $instance['number'] )

@@ -1,12 +1,12 @@
 <?php
 class JEDI_Widget_Tracker extends WP_Widget {
 
-	function JEDI_Widget_Tracker() {
+	public function __construct() {
 		$widget_ops = array('classname' => 'jedi_widget_tracker', 'description' => __('Server Tracker using AJAX'));
-		$this->WP_Widget('jwidget_tracker', __('JEDI: Server Tracker'), $widget_ops);
+		parent::__construct('jwidget_tracker', __('JEDI: Server Tracker'), $widget_ops);
 	}
-	
-	function widget($args, $instance) {
+
+	public function widget($args, $instance) {
 		extract($args);
 		$title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title']);
 		
@@ -15,15 +15,15 @@ class JEDI_Widget_Tracker extends WP_Widget {
 		echo "<ul><li><dl><dt>Server: </dt><dd>" . $instance['server'] . "</dd></dl></li></ul>\n";
 		echo $after_widget;
 	}
-	
-	function update( $new_instance, $old_instance ) {
+
+	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['server'] = strip_tags($new_instance['server']);
 		return $instance;
 	}
-	
-	function form( $instance ) {
+
+	public function form( $instance ) {
 		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'server' => '' ) );
 		$title = strip_tags($instance['title']);
 		$server = strip_tags($instance['server']);

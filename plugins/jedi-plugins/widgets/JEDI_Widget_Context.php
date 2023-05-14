@@ -1,12 +1,12 @@
 <?php
 class JEDI_Widget_Context extends WP_Widget {
 
-	function JEDI_Widget_Context() {
+	public function __construct() {
 		$widget_ops = array('classname' => 'jedi_widget_context', 'description' => __('Page context message (search, archives, category, etc.)'));
-		$this->WP_Widget('jwidget_context', __('JEDI: Context'), $widget_ops);
+		parent::__construct('jwidget_context', __('JEDI: Context'), $widget_ops);
 	}
-	
-	function widget($args, $instance) {
+
+	public function widget($args, $instance) {
 		extract($args);
 		echo $before_widget;
 		

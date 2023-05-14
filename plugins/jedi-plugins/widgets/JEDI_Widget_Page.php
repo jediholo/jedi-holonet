@@ -1,12 +1,12 @@
 <?php
 class JEDI_Widget_Page extends WP_Widget {
 
-	function JEDI_Widget_Page() {
+	public function __construct() {
 		$widget_ops = array('classname' => 'jedi_widget_page', 'description' => __('Display a page as a widget'));
-		$this->WP_Widget('jwidget_page', __('JEDI: Page'), $widget_ops);
+		parent::__construct('jwidget_page', __('JEDI: Page'), $widget_ops);
 	}
-	
-	function widget( $args, $instance ) {
+
+	public function widget( $args, $instance ) {
 		extract($args);
 		$title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title']);
 		$page = empty($instance['page_path']) ? null : get_page_by_path($instance['page_path']);
@@ -16,15 +16,15 @@ class JEDI_Widget_Page extends WP_Widget {
 		if ( !empty( $page ) ) { echo apply_filters('the_content', $page->post_content); }
 		echo $after_widget;
 	}
-	
-	function update( $new_instance, $old_instance ) {
+
+	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['page_path'] = strip_tags($new_instance['page_path']);
 		return $instance;
 	}
-	
-	function form( $instance ) {
+
+	public function form( $instance ) {
 		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'page_path' => '' ) );
 		$title = strip_tags($instance['title']);
 		$page_path = strip_tags($instance['page_path']);
