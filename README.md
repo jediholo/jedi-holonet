@@ -14,7 +14,7 @@ docker-compose up -d
 docker-compose exec wordpress bash -c "chown -R www-data:www-data /var/www/html"
 
 # Install and configure Wordpress
-docker-compose run --rm wp-cli bash -s < wp-setup.sh
+docker-compose run --rm wp-cli wp-setup.sh
 ```
 
 Then, point your browser to http://www.dev.jediholo.net and you should see the JEDI HoloNet site.

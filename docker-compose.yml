@@ -20,6 +20,12 @@ services:
       - './.docker/wordpress:/var/www/html'
       - './plugins/jedi-plugins:/var/www/html/wp-content/plugins/jedi-plugins'
       - './themes/jediholonet:/var/www/html/wp-content/themes/jediholonet'
+      - './wp-setup.sh:/usr/local/bin/wp-setup.sh'
+    environment:
+      - WORDPRESS_DB_HOST=mysql
+      - WORDPRESS_DB_USER=jediholo
+      - WORDPRESS_DB_PASSWORD=jediholo
+      - WORDPRESS_DB_NAME=jedi-wordpress
   mysql:
     image: ghcr.io/fab-infra/mariadb:10.4-opensuse15
     ports:
