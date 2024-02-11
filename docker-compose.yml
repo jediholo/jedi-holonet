@@ -1,11 +1,10 @@
-version: '3.5'
 services:
   wordpress:
-    image: wordpress:latest
+    image: wordpress:php8.1
     ports:
       - '127.0.0.11:80:80'
     volumes:
-      - './.docker/wordpress:/var/www/html'
+      - 'wordpress:/var/www/html'
       - './plugins/jedi-plugins:/var/www/html/wp-content/plugins/jedi-plugins'
       - './themes/jediholonet:/var/www/html/wp-content/themes/jediholonet'
     environment:
@@ -13,11 +12,11 @@ services:
       - WORDPRESS_DB_USER=jediholo
       - WORDPRESS_DB_PASSWORD=jediholo
       - WORDPRESS_DB_NAME=jedi-wordpress
-  wp-cli:
-    image: wordpress:cli
+  cli:
+    image: wordpress:cli-php8.1
     user: '33:33'
     volumes:
-      - './.docker/wordpress:/var/www/html'
+      - 'wordpress:/var/www/html'
       - './plugins/jedi-plugins:/var/www/html/wp-content/plugins/jedi-plugins'
       - './themes/jediholonet:/var/www/html/wp-content/themes/jediholonet'
       - './wp-setup.sh:/usr/local/bin/wp-setup.sh'
@@ -26,13 +25,19 @@ services:
       - WORDPRESS_DB_USER=jediholo
       - WORDPRESS_DB_PASSWORD=jediholo
       - WORDPRESS_DB_NAME=jedi-wordpress
+    profiles:
+      - setup
   mysql:
-    image: ghcr.io/fab-infra/mariadb:10.4-opensuse15
+    image: mariadb:10.11
     ports:
       - '127.0.0.11:3306:3306'
     volumes:
-      - './.docker/mysql:/var/lib/mysql'
+      - 'mysql:/var/lib/mysql'
     environment:
-      MYSQL_USER: jediholo
-      MYSQL_PASSWORD: jediholo
-      MYSQL_DATABASE: jedi-wordpress
+      - MYSQL_ROOT_PASSWORD=jediholo
+      - MYSQL_USER=jediholo
+      - MYSQL_PASSWORD=jediholo
+      - MYSQL_DATABASE=jedi-wordpress
+volumes:
+  mysql:
+  wordpress:
