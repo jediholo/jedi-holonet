@@ -12,6 +12,7 @@ services:
       - WORDPRESS_DB_USER=jediholo
       - WORDPRESS_DB_PASSWORD=jediholo
       - WORDPRESS_DB_NAME=jedi-wordpress
+      - WORDPRESS_CONFIG_EXTRA=define('WP_REDIS_HOST','redis');
   cli:
     image: wordpress:cli-php8.1
     user: '33:33'
@@ -25,6 +26,7 @@ services:
       - WORDPRESS_DB_USER=jediholo
       - WORDPRESS_DB_PASSWORD=jediholo
       - WORDPRESS_DB_NAME=jedi-wordpress
+      - WORDPRESS_CONFIG_EXTRA=define('WP_REDIS_HOST','redis');
     profiles:
       - setup
   mysql:
@@ -38,6 +40,8 @@ services:
       - MYSQL_USER=jediholo
       - MYSQL_PASSWORD=jediholo
       - MYSQL_DATABASE=jedi-wordpress
+  redis:
+    image: redis:6.2
 volumes:
   mysql:
   wordpress:
