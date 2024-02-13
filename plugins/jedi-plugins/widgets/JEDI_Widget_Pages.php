@@ -11,9 +11,7 @@ class JEDI_Widget_Pages extends WP_Widget_Pages {
 	}
 
 	public function widget( $args, $instance ) {
-		extract( $args );
-
-		$title = apply_filters('widget_title', empty( $instance['title'] ) ? __( 'Pages' ) : $instance['title']);
+		$title = apply_filters('widget_title', empty( $instance['title'] ) ? __( 'Pages' ) : $instance['title'], $instance, $this->id_base);
 		$sortby = empty( $instance['sortby'] ) ? 'menu_order' : $instance['sortby'];
 		$exclude = empty( $instance['exclude'] ) ? '' : $instance['exclude'];
 		$parent = empty($instance['parent']) ? '' : jedi_get_page_id_by_name($instance['parent']);
@@ -33,10 +31,10 @@ class JEDI_Widget_Pages extends WP_Widget_Pages {
 		));
 
 		if ( !empty( $out ) ) {
-			echo $before_widget;
-			if ($title) echo $before_title . $title . $after_title;
+			echo $args['before_widget'];
+			if ($title) echo $args['before_title'] . $title . $args['after_title'];
 			echo "<ul>\n" . $out . "</ul>\n";
-			echo $after_widget;
+			echo $args['after_widget'];
 		}
 	}
 
@@ -54,9 +52,10 @@ class JEDI_Widget_Pages extends WP_Widget_Pages {
 ?>
 		<p><label for="<?php echo $this->get_field_id('parent'); ?>"><?php _e('Parent page name (slug):'); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id('parent'); ?>" name="<?php echo $this->get_field_name('parent'); ?>" type="text" value="<?php echo $parent; ?>" /></p>
-		
+
 		<p><label for="<?php echo $this->get_field_id('depth'); ?>"><?php _e('Depth:'); ?></label>
 		<input id="<?php echo $this->get_field_id('depth'); ?>" name="<?php echo $this->get_field_name('depth'); ?>" type="text" value="<?php echo $depth; ?>" size="3" /></p>
 <?php
 	}
+
 }
