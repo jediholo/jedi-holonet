@@ -1,6 +1,6 @@
 services:
   wordpress:
-    image: wordpress:php8.1
+    image: wordpress:php8.2
     ports:
       - '127.0.0.11:80:80'
     volumes:
@@ -14,7 +14,7 @@ services:
       - WORDPRESS_DB_NAME=jedi-wordpress
       - WORDPRESS_CONFIG_EXTRA=define('WP_REDIS_HOST','redis');
   cli:
-    image: wordpress:cli-php8.1
+    image: wordpress:cli-php8.2
     user: '33:33'
     volumes:
       - 'wordpress:/var/www/html'
