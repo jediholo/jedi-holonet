@@ -182,22 +182,34 @@ function jedi_server_shortcode($atts, $content, $shortcode_tag) {
 }
 
 
-/**************************/
-/* JEDI date/time support */
-/**************************/
+/*********************/
+/* JEDI date support */
+/*********************/
 
-function jedi_get_year($timestamp) {
+function jedi_get_date(DateTimeInterface $date) {
 	$baseRL = 2000;
 	$baseSW = 153;
 
-	$dateRL = getdate($timestamp);
-	$yearOffset = $dateRL['year'] - $baseRL;
-	$yearSW = $baseSW + ($yearOffset * 12) + $dateRL['mon'];
+	$yearRL = intval($date->format('Y'));
+	$monthRL = intval($date->format('n')); // 1 to 12
+	$yearSW = $baseSW + (($yearRL - $baseRL) * 12) + $monthRL;
+	$daySW = intval($date->format('j'));
 
-	return $yearSW;
+	// Time freeze:
+	// Year 461 (August 2025) is extended until the end of 2025, then January 2026 becomes year 462
+	// Days are added every month, so December 31, 2025 will be 461.153
+	if ($yearRL == 2025 && $monthRL >= 8) {
+		$yearSW -= ($monthRL - 8); // skip remaining months of 2025
+		$daySW = intval($date->format('z')) - 211; // number of days from January 1 to July 31, minus 1 (day of year is 0-based)
+	} elseif ($yearRL > 2025) {
+		$yearSW -= 4; // skip last 4 months of 2025
+	}
+
+	return $yearSW . '.' . str_pad($daySW, 2, "0", STR_PAD_LEFT);
 }
 
-function jedi_parse_date_format($format, $timestamp) {
-	$jedi_year = jedi_get_year($timestamp);
-	return preg_replace('/\\$J/', $jedi_year, $format);
+function jedi_parse_date_format($format, $timestamp, $timezone) {
+	$date = DateTimeImmutable::createFromFormat('U', $timestamp, $timezone);
+	$jedi_date = jedi_get_date($date);
+	return preg_replace('/\\$J/', $jedi_date, $format);
 }

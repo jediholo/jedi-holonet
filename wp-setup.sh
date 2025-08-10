@@ -14,7 +14,7 @@ wp theme update --all
 
 # Set options
 wp option update blogdescription 'The JEDI Order HoloNet'
-wp option update date_format '$J.d'
+wp option update date_format '$J'
 wp option update time_format 'H:i'
 wp option update timezone_string 'America/New_York'
 wp option update posts_per_page '5'
@@ -27,7 +27,7 @@ wp option update show_avatars '0'
 
 # Configure plugins/theme
 wp plugin uninstall akismet hello.php
-wp plugin install classic-editor classic-widgets daggerhart-openid-connect-generic easy-wp-smtp embed-iframe google-calendar-events google-sitemap-generator notification redis-cache wonderm00ns-simple-facebook-open-graph-tags wp-crontrol wp-super-cache wp-piwik wptouch --activate
+wp plugin install classic-editor classic-widgets daggerhart-openid-connect-generic easy-wp-smtp embed-iframe google-calendar-events google-sitemap-generator notification redis-cache wonderm00ns-simple-facebook-open-graph-tags wp-crontrol wp-security-audit-log wp-super-cache wp-piwik wptouch --activate
 wp plugin activate jedi-plugins
 wp theme activate jediholonet
 wp redis enable

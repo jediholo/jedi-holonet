@@ -39,7 +39,7 @@ add_action('widgets_init', 'jedi_plugins_widgets_init');
 
 // Date filter
 function jedi_plugins_wp_date( $date, $format, $timestamp, $timezone ) {
-	return jedi_parse_date_format($date, $timestamp);
+	return jedi_parse_date_format($date, $timestamp, $timezone);
 }
 add_filter('wp_date', 'jedi_plugins_wp_date', 10, 4);
 

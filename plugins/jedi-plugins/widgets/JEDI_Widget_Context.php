@@ -14,9 +14,9 @@ class JEDI_Widget_Context extends WP_Widget {
 <?php	} elseif (is_day()) { ?>
 			<p>You are currently browsing the <a href="<?php bloginfo('url'); ?>/"><?php echo bloginfo('name'); ?></a> HoloNews archives for <strong><span title="<?php the_time('F j, Y'); ?>"><?php the_time(get_option('date_format')); ?></span></strong>.</p>
 <?php	} elseif (is_month()) { ?>
-			<p>You are currently browsing the <a href="<?php bloginfo('url'); ?>/"><?php echo bloginfo('name'); ?></a> HoloNews archives for the year <strong><span title="<?php the_time('F, Y'); ?>"><?php the_time('$J'); ?></span></strong>.</p>
+			<p>You are currently browsing the <a href="<?php bloginfo('url'); ?>/"><?php echo bloginfo('name'); ?></a> HoloNews archives for the month <strong><?php the_time('F, Y'); ?></strong>.</p>
 <?php	} elseif (is_year()) { ?>
-			<p>You are currently browsing the <a href="<?php bloginfo('url'); ?>/"><?php echo bloginfo('name'); ?></a> HoloNews archives for the RL year <strong><?php the_time('Y'); ?></strong>.</p>
+			<p>You are currently browsing the <a href="<?php bloginfo('url'); ?>/"><?php echo bloginfo('name'); ?></a> HoloNews archives for the year <strong><?php the_time('Y'); ?></strong>.</p>
 <?php	} elseif (is_search()) { ?>
 			<p>You have searched the <a href="<?php echo bloginfo('url'); ?>/"><?php echo bloginfo('name'); ?></a> HoloNews archives for <strong>'<?php the_search_query(); ?>'</strong>. If you are unable to find anything in these search results, you can try one of the links below.</p>
 <?php	} elseif (is_paged()) { ?>
