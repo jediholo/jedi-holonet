@@ -27,7 +27,7 @@ wp option update show_avatars '0'
 
 # Configure plugins/theme
 wp plugin uninstall akismet hello.php
-wp plugin install classic-editor classic-widgets daggerhart-openid-connect-generic easy-wp-smtp embed-iframe google-calendar-events google-sitemap-generator redis-cache wonderm00ns-simple-facebook-open-graph-tags wp-crontrol wp-piwik wp-security-audit-log wp-super-cache wp-webhooks wptouch --activate
+wp plugin install classic-editor classic-widgets daggerhart-openid-connect-generic embed-iframe fluent-smtp google-calendar-events google-sitemap-generator redis-cache wonderm00ns-simple-facebook-open-graph-tags wp-crontrol wp-piwik wp-security-audit-log wp-super-cache wp-webhooks wptouch --activate
 wp plugin activate jedi-plugins
 wp theme activate jediholonet
 wp redis enable

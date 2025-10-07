@@ -68,3 +68,9 @@ function jedi_plugins_openid_connect_update_user( $user, $user_claim ) {
 	}
 }
 add_action('openid-connect-generic-update-user-using-current-claim', 'jedi_plugins_openid_connect_update_user', 10, 2);
+
+// Big image size threshold
+function jedi_plugins_big_image_size_threshold( $threshold, $imagesize, $file, $attachment_id ) {
+	return 7680; // 8K
+}
+add_filter('big_image_size_threshold', 'jedi_plugins_big_image_size_threshold', 10, 4);
