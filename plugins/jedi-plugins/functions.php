@@ -196,13 +196,13 @@ function jedi_get_date(DateTimeInterface $date) {
 	$daySW = intval($date->format('j'));
 
 	// Time freeze:
-	// Year 461 (August 2025) is extended until the end of 2025, then January 2026 becomes year 462
-	// 100 days are added every month, so December 31, 2025 will be 461.431
-	if ($yearRL == 2025 && $monthRL > 8) {
+	// Year 461 (August 2025) is extended through September and October 2025, then November 2025 becomes year 462
+	// 100 days are added every month, so October 31, 2025 becomes 461.231
+	if ($yearRL == 2025 && $monthRL > 8 && $monthRL < 11) {
 		$yearSW -= ($monthRL - 8); // skip remaining months of 2025
 		$daySW += ($monthRL - 8) * 100; // add 100 days every month
-	} elseif ($yearRL > 2025) {
-		$yearSW -= 4; // skip last 4 months of 2025
+	} elseif (($yearRL == 2025 && $monthRL >= 11) || $yearRL > 2025) {
+		$yearSW -= 2; // skip September/October 2025
 	}
 
 	return $yearSW . '.' . str_pad($daySW, 2, "0", STR_PAD_LEFT);
