@@ -1,6 +1,6 @@
 services:
   wordpress:
-    image: wordpress:php8.2
+    image: wordpress:php8.4
     ports:
       - '127.0.0.11:80:80'
     volumes:
@@ -15,7 +15,7 @@ services:
       - WORDPRESS_DB_NAME=jedi-wordpress
       - WORDPRESS_CONFIG_EXTRA=define('WP_REDIS_HOST','redis');
   cli:
-    image: wordpress:cli-php8.2
+    image: wordpress:cli-php8.4
     user: '33:33'
     volumes:
       - 'wordpress:/var/www/html'
@@ -31,7 +31,7 @@ services:
     profiles:
       - setup
   mysql:
-    image: mariadb:10.11
+    image: mariadb:11.8
     ports:
       - '127.0.0.11:3306:3306'
     volumes:
@@ -42,7 +42,7 @@ services:
       - MYSQL_PASSWORD=jediholo
       - MYSQL_DATABASE=jedi-wordpress
   redis:
-    image: redis:6.2
+    image: redis:8.2
 volumes:
   mysql:
   wordpress:
