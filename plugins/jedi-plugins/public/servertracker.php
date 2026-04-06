@@ -28,14 +28,14 @@ try {
 	$numClients = count($players);
 
 	// Display map section
-	$mapSection = $serverinfo['mapname'];
+	$mapSection = htmlspecialchars($serverinfo['mapname']);
 	if ($currentMap != null && isset($currentMap->slug)) {
 		$mapSection = '<a href="//rpmod.jediholo.net/gameasset/view/name/' . $currentMap->slug . '">' . $mapSection . '</a>';
 	}
 	echo "<li><dl><dt>Map: </dt><dd>{$mapSection}</dd></dl></li>\n";
 
 	// Display players section
-	$playersSection = "{$numClients}/{$serverinfo['sv_maxclients']}";
+	$playersSection = htmlspecialchars("{$numClients}/{$serverinfo['sv_maxclients']}");
 	if ($numClients > 0) {
 		$id = uniqid();
 		$playersSection = "<a href=\"#\" onclick=\"slideToggle('{$id}-players'); return false;\">{$playersSection}</a>";
@@ -43,9 +43,9 @@ try {
 		foreach ($players as $player) {
 			$playersSection .= '<li>';
 			if (isset($player->account)) {
-				$playersSection .= "<a href=\"//rpmod.jediholo.net/character/view/userName/{$player->account}\">";
+				$playersSection .= "<a href=\"//rpmod.jediholo.net/character/view/userName/" . htmlspecialchars($player->account) . "\">";
 			}
-			$playersSection .= "<span title=\"{$player->sanitizedName}\">{$player->colorizedName}</span>";
+			$playersSection .= "<span title=\"" . htmlspecialchars($player->sanitizedName) . "\">{$player->colorizedName}</span>";
 			if (isset($player->account)) {
 				$playersSection .= '</a>';
 			}
@@ -56,5 +56,5 @@ try {
 	echo "<li><dl><dt>Players: </dt><dd>{$playersSection}</dd></dl></li>\n";
 
 } catch (Exception $e) {
-	echo "<li><strong>{$e->getMessage()}</strong></li>\n";
+	echo "<li><strong>" . htmlspecialchars($e->getMessage()) . "</strong></li>\n";
 }
