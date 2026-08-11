@@ -32,16 +32,16 @@ Template Name: Biography
 
 $custom = get_post_custom();
 
-$username = $custom['username'][0];
-$rank = $custom['rank'][0];
-$image = $custom['image'][0];
-$title = $custom['title'][0];
-$homeworld = $custom['homeworld'][0];
-$mentors = $custom['mentors'][0];
-$species = $custom['species'][0];
-$padawans = $custom['padawans'][0];
-$abilities = $custom['abilities'][0];
-$reputation = $custom['reputation'][0];
+$username = isset($custom['username']) ? $custom['username'][0] : null;
+$rank = isset($custom['rank']) ? $custom['rank'][0] : null;
+$image = isset($custom['image']) ? $custom['image'][0] : null;
+$title = isset($custom['title']) ? $custom['title'][0] : null;
+$homeworld = isset($custom['homeworld']) ? $custom['homeworld'][0] : null;
+$mentors = isset($custom['mentors']) ? $custom['mentors'][0] : null;
+$species = isset($custom['species']) ? $custom['species'][0] : null;
+$padawans = isset($custom['padawans']) ? $custom['padawans'][0] : null;
+$abilities = isset($custom['abilities']) ? $custom['abilities'][0] : null;
+$reputation = isset($custom['reputation']) ? $custom['reputation'][0] : null;
 $biography = get_the_content();
 
 if (!empty($abilities)) {
